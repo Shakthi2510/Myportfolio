@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shakthi | Freelancer Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Orbitron:wght@500&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #021524;
+      color: #fff;
+      overflow-x: hidden;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    header {
+      background-color: #010e18;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      animation: slideInDown 1s ease-in-out;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .logo {
+      font-size: 2em;
+      font-weight: bold;
+      color: #00bfff;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00bfff;
+    }
+
+    section {
+      padding: 80px 10vw;
+    }
+
+    .hero-modern {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 40px;
+      padding-top: 100px;
+      padding-bottom: 100px;
+      animation: fadeIn 2s ease-in;
+      background-image: url('https://images.unsplash.com/photo-1606761568499-6fbb9f047f91');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+        }
+
+    .hero-text h1 {
+      font-size: 3em;
+      font-weight: 700;
+      animation: slideInLeft 1s ease-out;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .hero-text h1 span {
+      color: #00bfff;
+    }
+
+    .hero-text h3 {
+      font-weight: 500;
+      color: #00bfff;
+      margin: 10px 0 20px;
+      animation: fadeInUp 1.5s ease-in;
+    }
+
+    .hero-text p {
+      max-width: 500px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: #cccccc;
+      animation: fadeInUp 1.8s ease-in;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 25px;
+      animation: fadeInUp 2s ease-in;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      font-size: 1em;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .filled {
+      background-color: #00bfff;
+      color: #fff;
+    }
+
+    .outlined {
+      border: 2px solid #00bfff;
+      color: #00bfff;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .social-icons {
+      margin-top: 15px;
+      animation: fadeInUp 2.2s ease-in;
+    }
+
+    .social-icons a {
+      margin-right: 15px;
+    }
+
+    .social-icons img {
+      width: 30px;
+      filter: brightness(0) invert(1);
+    }
+
+    .hero-img img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+      animation: zoomIn 1.5s ease-in;
+    }
+
+    h2 {
+      font-size: 2.5em;
+      color: #00bfff;
+      margin-bottom: 20px;
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.8;
+      color: #cccccc;
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+
+    section#services, section#projects {
+      background-color: #031f34;
+    }
+
+    section#services .grid, section#projects .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background-color: #04293a;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 191, 255, 0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      text-align: center;
+      animation: floatIn 2s ease-in-out;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 10px 25px rgba(0, 191, 255, 0.3);
+    }
+
+    section#contact {
+      background-color: #01111e;
+      text-align: center;
+      padding: 100px 10vw;
+    }
+
+    section#about {
+      background-color: #021b30;
+      border-top: 2px solid #00bfff;
+      border-bottom: 2px solid #00bfff;
+      padding: 60px 10vw;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background-color: #010e18;
+      color: #aaa;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .mail-button:hover {
+      background-color: #0088cc;
+    }
+    .mail-button {
+      display: inline-block;
+      margin-top: 30px;
+      background-color: #00bfff;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: background 0.3s ease;
+    }
+    .timeline {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .timeline-column {
+      flex: 1 1 300px;
+      max-width: 500px;
+      position: relative;
+    }
+
+    .timeline-column::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 10px;
+      bottom: 0;
+      width: 2px;
+      background: #00bfff;
+    }
+
+    .timeline-entry {
+      background: #04293a;
+      border-radius: 8px;
+      padding: 20px 25px;
+      margin: 20px 0;
+      box-shadow: 0 4px 8px rgba(0, 191, 255, 0.1);
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .timeline-entry:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 191, 255, 0.2);
+    }
+
+    .timeline-entry::before {
+      content: '';
+      position: absolute;
+      top: 30px;
+      left: -11px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #00bfff;
+      border: 2px solid #fff;
+    }
+
+    .timeline-entry h4 {
+      color: #00bfff;
+      font-size: 1.1em;
+      margin-bottom: 5px;
+    }
+
+    .timeline-entry h3 {
+      font-size: 1.3em;
+      margin: 5px 0 10px;
+    }
+
+    .timeline-entry p {
+      font-size: 0.95em;
+      color: #ccc;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideInLeft {
+      from { transform: translateX(-100px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes slideInDown {
+      from { transform: translateY(-100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes floatIn {
+      0% { transform: translateY(20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+<!-- rest of the HTML content remains unchanged -->
+
+  <header>
+    <div class="logo">Shakthi</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero-modern">
+    <div class="hero-text">
+      <h1>Hi, I'm <span>Shakthi</span></h1>
+      <h3>Cybersecurity & Full Stack Developer</h3>
+      <p>
+        I specialize in secure, scalable, and beautifully designed digital products.
+        Whether it’s a full website, branding, or a vulnerability audit — I’ve got you covered.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn filled">Hire Me</a>
+        <a href="#contact" class="btn outlined">Let's Talk</a>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.github.com/shakthi2510"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub"></a>
+        <a href="https://www.linkedin.com/in/shakthi25"><img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn"></a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="portfolio.png" alt="Shakthi Image">
+    </div>
+  </section>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a passionate developer focused on building secure, functional, and user-friendly solutions. With a strong background in cybersecurity and full stack development, I love solving real-world problems and pushing tech boundaries.
+    </p>
+
+    <div class="timeline">
+      <div class="timeline-column">
+        <h3 style="color:#00bfff; text-align:center; margin-bottom: 10px;">Education</h3>
+        <div class="timeline-entry">
+          <h4>2023</h4>
+          <h3>Internship – Data Science Elewayte</h3>
+          <p>Completed AI-focused internship to build practical applications and improve automation skills.</p>
+        </div>
+        <div class="timeline-entry">
+          <h4>2021 - 2025</h4>
+          <h3>B.Sc. Computer Science with Cybersecurity</h3>
+          <p>Bharath institute of higher education & research, Chennai</p>
+        </div>
+        <div class="timeline-entry">
+          <h4>2019 - 2021</h4>
+          <h3>12th Grade - HSC</h3>
+          <p>vivekananda vidyalaya matriculation higher secondary school,madurantakam,tamil nadu</p>
+        </div>
+        <div class="timeline-entry">
+          <h4>2018 - 2019</h4>
+          <h3>10th Grade - SSLC</h3>
+          <p>vivekananda vidyalaya matriculation higher secondary school,madurantakam,tamil nadu</p>
+        </div>
+      </div>
+
+      <div class="timeline-column">
+        <h3 style="color:#00bfff; text-align:center; margin-bottom: 10px;">Skills</h3>
+        <div class="timeline-entry">
+          <h4>Frontend</h4>
+          <h3>HTML, CSS, JavaScript</h3>
+          <p>Responsive layouts and interactive UI</p>
+        </div>
+        <div class="timeline-entry">
+          <h4>Backend & Database</h4>
+          <h3>Python, PHP, MySQL, Firebase</h3>
+          <p>APIs, database design, backend logic</p>
+        </div>
+        <div class="timeline-entry">
+          <h4>Productivity</h4>
+          <h3>Artificial Intelligence</h3>
+          <p>I use AI tools to simplify and accelerate my workflow effectively.</p>
+        </div>
+        <div class="timeline-entry">
+          <h4>Mobile & Tools</h4>
+          <h3>Kotlin, XML, UI/UX Design</h3>
+          <p>Android apps, intuitive mobile UIs</p>
+        </div>
+        <div class="timeline-entry">
+          <h4>Cybersecurity</h4>
+          <h3>Testing & Analysis</h3>
+          <p>Bug bounty, vulnerability assessment</p>
+        </div>
+        <div class="timeline-entry">
+          <h4>Machine Learning</h4>
+          <h3>Random Forest</h3>
+          <p>Model training and prediction</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>Services</h2>
+    <div class="grid">
+      <div class="card">Website Development (HTML, CSS, JavaScript, Python)</div>
+      <div class="card">Cybersecurity Audit and Consulting</div>
+      <div class="card">Backend Integration (PHP, Firebase, Node.js)</div>
+      <div class="card">UI/UX Design & Responsive Web Apps</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="grid">
+      <div class="card">Matrimonial App with Geolocation Alert</div>
+      <div class="card">Tech Accessories E-commerce Site</div>
+      <div class="card">Zoo Management System with Vehicle Tracking</div>
+      <div class="card">DDoS Attack Detection with Random Forest ML</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      Ready to work together? Drop me a message at <strong>shakthisiva2510@gmail.com</strong> or connect on LinkedIn. I'm always open to exciting new opportunities and collaborations.
+    </p>
+    <a href="mailto:shakthisiva2510@gmail.com" class="mail-button">Message Me</a>
+  </section>
+
+  <footer>
+    &copy; 2025 Shakthi | Freelancer Portfolio
+  </footer>
+</body>
+</html>
