@@ -1,0 +1,1049 @@
+:root{--bg:#06080d;--panel:rgba(11,16,23,.64);--panel2:rgba(12,19,27,.8);--text:#edfaff;--muted:#82939c;--dim:#53646c;--cyan:#00f0ff;--green:#00ff9d;--violet:#7657ff;--line:rgba(133,190,207,.13);--mx:50vw;--my:50vh;--ease:cubic-bezier(.16,1,.3,1)}*{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--bg)}body{margin:0;background:radial-gradient(circle at 50% -10%,#10202a 0,#06080d 38%,#04060a 100%);color:var(--text);font-family:'Space Grotesk',sans-serif;overflow-x:hidden;line-height:1.5}body:before{content:'';position:fixed;inset:0;pointer-events:none;background:radial-gradient(500px circle at var(--mx) var(--my),rgba(0,240,255,.055),transparent 70%);z-index:0}.section{position:relative;z-index:2;width:min(1180px,92vw);margin:0 auto;padding:130px 0}.hero{min-height:100svh;padding-top:145px;padding-bottom:70px;display:flex;flex-direction:column;justify-content:center}.hud{position:fixed;top:0;left:0;right:0;height:72px;padding:0 4vw;display:flex;align-items:center;justify-content:space-between;z-index:50;background:linear-gradient(180deg,rgba(4,7,11,.9),rgba(4,7,11,.35));backdrop-filter:blur(18px);border-bottom:1px solid rgba(140,210,225,.08)}.brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none}.brand span{width:34px;height:34px;display:grid;place-items:center;border:1px solid rgba(0,240,255,.4);color:var(--cyan);font:10px 'Fira Code';box-shadow:inset 0 0 18px rgba(0,240,255,.08)}.brand b{font-size:12px;letter-spacing:.22em}.desktop-nav{display:flex;gap:27px}.desktop-nav a{color:#71838c;text-decoration:none;font:9px 'Fira Code';letter-spacing:.16em;transition:.3s}.desktop-nav a:hover{color:var(--cyan)}.status{display:flex;align-items:center;gap:8px;font:8px 'Fira Code';color:#71838c}.status i,.hero-meta i{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green);display:inline-block}.progress{position:fixed;top:71px;left:0;right:0;height:2px;z-index:51;background:transparent}.progress i{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--cyan),var(--violet));box-shadow:0 0 14px rgba(0,240,255,.6)}#network-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;opacity:.62}.aurora{position:fixed;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0;opacity:.16;animation:drift 18s ease-in-out infinite alternate}.a1{width:500px;height:500px;background:#007b91;left:-180px;top:20%}.a2{width:420px;height:420px;background:#4b27b5;right:-180px;bottom:5%;animation-delay:-7s}.grid-overlay{position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.18;background-image:linear-gradient(rgba(120,190,210,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(120,190,210,.05) 1px,transparent 1px);background-size:80px 80px;mask-image:linear-gradient(to bottom,black,transparent 80%)}.noise{position:fixed;inset:0;z-index:20;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E")}.scanline{position:fixed;left:0;right:0;top:-10%;height:16vh;background:linear-gradient(180deg,transparent,rgba(0,240,255,.025),transparent);z-index:19;pointer-events:none;animation:scan 12s linear infinite}.glass{background:linear-gradient(145deg,rgba(15,24,33,.76),rgba(6,11,17,.55));border:1px solid rgba(153,219,231,.13);box-shadow:0 20px 80px rgba(0,0,0,.28),inset 0 1px rgba(255,255,255,.025);backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px)}.reveal{opacity:0;transform:translate3d(0,38px,0);transition:opacity .8s var(--ease),transform .9s var(--ease)}.reveal.visible{opacity:1;transform:none}.eyebrow,.tag{font:9px 'Fira Code';letter-spacing:.16em;color:var(--cyan)}h1,h2,h3,p{margin-top:0}.hero-grid{display:grid;grid-template-columns:1.1fr .72fr;gap:7vw;align-items:center}.hero-copy{position:relative;z-index:4}.hero h1{font-size:clamp(56px,8.5vw,112px);line-height:.83;letter-spacing:-.075em;margin:18px 0 30px;font-weight:700}.hero h1 span,h2 span{color:transparent;-webkit-text-stroke:1px var(--cyan);text-shadow:0 0 28px rgba(0,240,255,.1)}.lede{max-width:620px;color:#91a2aa;font-size:16px}.hero-actions{display:flex;gap:10px;margin:30px 0}.btn{display:inline-flex;align-items:center;justify-content:center;gap:15px;min-height:48px;padding:0 19px;border:1px solid rgba(142,211,224,.18);color:#a9bac1;text-decoration:none;font:9px 'Fira Code';letter-spacing:.14em;background:rgba(255,255,255,.02);transition:transform .25s var(--ease),border-color .25s,color .25s,background .25s}.btn:hover{color:#fff;border-color:rgba(0,240,255,.55);background:rgba(0,240,255,.05)}.btn.primary{color:#041013;background:var(--cyan);border-color:var(--cyan);box-shadow:0 0 30px rgba(0,240,255,.16)}.hero-meta{display:flex;gap:28px;color:#53656d;font:8px 'Fira Code';letter-spacing:.08em}.hero-meta b{color:#a9bdc5;font-weight:500}.hero-meta span{display:flex;align-items:center;gap:8px}.hero-console{padding:25px;min-height:300px;position:relative;overflow:hidden}.console-head,.telemetry-row{display:flex;justify-content:space-between;align-items:center;font:9px 'Fira Code';letter-spacing:.1em}.console-head{color:#82949c;padding-bottom:22px;border-bottom:1px solid var(--line)}.telemetry-row{margin-top:23px}.telemetry-row b{color:#d6e4e8;font-weight:500}.telemetry-row span{color:#61757d}.telemetry-row em{color:var(--cyan);font-style:normal;font-size:8px}.meter{height:3px;background:#142129;margin-top:9px;overflow:hidden}.meter i{display:block;height:100%;width:var(--value);background:linear-gradient(90deg,var(--cyan),var(--green));transform-origin:left;animation:meter 3s var(--ease) infinite alternate}.packet-stream{display:flex;align-items:center;gap:9px;margin-top:27px;color:#50636b;font:8px 'Fira Code'}.packet-stream i{height:1px;width:30px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);animation:packet 1.8s linear infinite}.hero-skill-deck{margin-top:58px;padding:16px;position:relative;z-index:4}.deck-label{display:flex;justify-content:space-between;align-items:center;padding:3px 5px 13px;font:9px 'Fira Code';letter-spacing:.13em;color:#a7b8bf}.deck-label small{color:#53666e}.deck-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.stack-chip{min-height:88px;padding:12px;color:inherit;text-decoration:none;border:1px solid rgba(133,207,222,.1);background:rgba(255,255,255,.018);transition:.35s var(--ease);position:relative;overflow:hidden}.stack-chip:after{content:'';position:absolute;inset:auto 0 0;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);transform:scaleX(.2);transition:.4s}.stack-chip:hover{transform:translateY(-5px);background:rgba(0,240,255,.04);border-color:rgba(0,240,255,.35)}.stack-chip:hover:after{transform:scaleX(1)}.stack-chip b{display:block;color:var(--cyan);font:8px 'Fira Code';margin-bottom:8px}.stack-chip span{display:block;font-size:11px;font-weight:600;letter-spacing:.05em}.stack-chip small{display:block;color:#62747c;font:7px 'Fira Code';line-height:1.5;margin-top:7px}.scroll-cue{display:flex;align-items:center;gap:15px;color:#52646c;font:8px 'Fira Code';letter-spacing:.13em;margin-top:40px}.scroll-cue i{width:80px;height:1px;background:linear-gradient(90deg,var(--cyan),transparent);position:relative}.scroll-cue i:after{content:'';position:absolute;left:0;top:-2px;width:5px;height:5px;border-radius:50%;background:var(--cyan);animation:travel 2s ease-in-out infinite}.hero-orbit{position:absolute;right:-15vw;top:15%;width:45vw;height:45vw;max-width:650px;max-height:650px;border:1px solid rgba(0,240,255,.07);border-radius:50%;pointer-events:none;z-index:1}.hero-orbit span{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 20px var(--cyan)}.hero-orbit span:nth-child(1){left:20%;top:2%}.hero-orbit span:nth-child(2){right:7%;top:62%}.hero-orbit span:nth-child(3){left:38%;bottom:-2%}.section-head{max-width:780px;margin-bottom:38px}.section-head h2{font-size:clamp(38px,6vw,72px);line-height:.95;letter-spacing:-.06em;margin:10px 0 18px}.section-head>p:last-child{color:#71838b;max-width:640px}.skill-signal-row{display:flex;gap:7px;overflow:auto;scrollbar-width:none;margin-bottom:14px;padding:2px 0 12px}.skill-signal-row::-webkit-scrollbar{display:none}.skill-signal-row span{flex:0 0 auto;padding:10px 13px;border:1px solid rgba(0,240,255,.12);background:rgba(7,14,20,.64);color:#9eb0b8;font:8px 'Fira Code';letter-spacing:.08em;transition:.25s}.skill-signal-row span i{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan);margin-right:7px}.topology{height:560px;position:relative;overflow:hidden}.topology:before{content:'';position:absolute;inset:0;background:radial-gradient(circle at var(--topo-x,50%) var(--topo-y,50%),rgba(0,240,255,.1),transparent 23%),linear-gradient(120deg,rgba(0,240,255,.03),transparent 35%,rgba(118,87,255,.03));pointer-events:none}.links{position:absolute;inset:0;width:100%;height:100%;opacity:.45}.links path{fill:none;stroke:rgba(0,240,255,.2);stroke-width:1;stroke-dasharray:5 8;animation:dash 14s linear infinite}.node{position:absolute;z-index:5;color:inherit;font-family:'Space Grotesk';cursor:pointer}.node:not(.core){width:150px;height:80px;background:rgba(7,13,19,.82);border:1px solid rgba(134,210,224,.14);color:#a7b9c0;text-align:left;padding:13px;transition:.3s var(--ease);clip-path:polygon(0 0,calc(100% - 9px) 0,100% 9px,100% 100%,9px 100%,0 calc(100% - 9px))}.node:not(.core):hover,.node.active{border-color:rgba(0,240,255,.55);background:rgba(0,240,255,.055);transform:translateY(-5px);box-shadow:0 15px 50px rgba(0,240,255,.09)}.node b{display:block;font:8px 'Fira Code';color:var(--cyan)}.node strong{display:block;font-size:11px;letter-spacing:.08em;margin-top:7px}.node span{display:block;color:#5f7179;font:7px 'Fira Code';margin-top:4px}.node.core{width:150px;height:150px;border-radius:50%;left:calc(50% - 75px);top:calc(50% - 75px);display:grid;place-items:center;align-content:center;background:radial-gradient(circle,rgba(0,240,255,.11),rgba(5,10,15,.85) 62%);border:1px solid rgba(0,240,255,.3);box-shadow:0 0 80px rgba(0,240,255,.09),inset 0 0 30px rgba(0,240,255,.07);text-align:center}.node.core small{font:8px 'Fira Code';color:#647980}.node.core strong{font-size:18px;letter-spacing:.08em}.node.core span{font:7px 'Fira Code';color:var(--cyan)}.core-pulse{position:absolute;inset:-12px;border:1px solid rgba(0,240,255,.16);border-radius:50%;animation:pulse 2.5s ease-out infinite}.n1{left:8%;top:19%}.n2{right:8%;top:19%}.n3{left:8%;bottom:18%}.n4{right:8%;bottom:18%}.n5{left:calc(50% - 75px);bottom:5%}.topo-hud{position:absolute;top:18px;left:20px;right:20px;display:flex;justify-content:space-between;color:#50636b;font:8px 'Fira Code';z-index:6}.topo-hud b{font-weight:400;color:var(--cyan)}.scan-dot{position:absolute;width:4px;height:4px;background:var(--cyan);box-shadow:0 0 12px var(--cyan);border-radius:50%;z-index:4}.sd1{left:31%;top:31%;animation:blink 1.4s infinite}.sd2{right:31%;top:57%;animation:blink 1.9s infinite}.sd3{left:48%;bottom:17%;animation:blink 1.2s infinite}.node-readout{min-height:54px;margin-top:10px;padding:18px 20px;border-left:2px solid var(--cyan);background:rgba(8,14,19,.72);color:#70828a;font:9px 'Fira Code';letter-spacing:.04em}.node-readout b{color:#d8eef2;margin-right:10px}.node-readout span{color:var(--cyan);margin-right:10px}.skill-strip{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.skill-strip span{padding:7px 9px;border:1px solid var(--line);color:#62747c;font:7px 'Fira Code';background:rgba(255,255,255,.012)}.path-section{padding-top:120px}.career-path{position:relative;padding:10px 0}.path-line{position:absolute;top:0;bottom:0;left:50%;width:1px;background:linear-gradient(var(--cyan),rgba(0,240,255,.08) 75%,transparent);overflow:hidden}.path-line i{display:block;width:3px;height:140px;background:linear-gradient(transparent,var(--cyan),transparent);margin-left:-1px;filter:blur(1px);animation:pathflow 3.2s linear infinite}.career-card{width:calc(50% - 55px);position:relative;margin:0 0 65px;display:grid;grid-template-columns:44px 1fr;gap:18px;padding:26px;background:rgba(8,14,20,.64);border:1px solid rgba(139,205,217,.1);transition:.45s var(--ease)}.career-card:hover{transform:translateY(-5px);border-color:rgba(0,240,255,.25);box-shadow:0 25px 70px rgba(0,0,0,.25)}.career-card.reverse{margin-left:calc(50% + 55px)}.path-index{width:36px;height:36px;display:grid;place-items:center;border:1px solid rgba(0,240,255,.25);color:var(--cyan);font:9px 'Fira Code'}.career-card time{position:absolute;right:22px;top:30px;color:#4f626a;font:8px 'Fira Code'}.career-main{min-width:0}.career-main h3{font-size:22px;line-height:1.1;margin:9px 0 12px}.career-main p:not(.tag){color:#778990;font-size:12px;line-height:1.7;margin-bottom:0}.mini-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}.mini-tags span{font:7px 'Fira Code';padding:6px 8px;border:1px solid rgba(0,240,255,.12);color:#687b83;background:rgba(255,255,255,.015)}.path-orb{position:absolute;width:32px;height:32px;border-radius:50%;background:#071016;border:1px solid rgba(0,240,255,.35);display:grid;place-items:center;color:var(--cyan);font:7px 'Fira Code';right:-71px;top:28px;box-shadow:0 0 25px rgba(0,240,255,.08)}.reverse .path-orb{left:-71px;right:auto}.education-section{padding-top:60px}.edu-rail{position:relative;padding:30px 0 10px;display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.edu-track{position:absolute;left:8%;right:8%;top:72px;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),rgba(118,87,255,.7),transparent);opacity:.45}.edu-node{position:relative;padding-top:30px}.edu-year{font:9px 'Fira Code';color:var(--cyan);margin-left:18px}.edu-dot{width:10px;height:10px;border-radius:50%;background:var(--bg);border:1px solid var(--cyan);box-shadow:0 0 18px rgba(0,240,255,.45);margin:16px 0 17px 18px;position:relative;z-index:2}.edu-card{min-height:245px;padding:24px;transition:.4s var(--ease)}.edu-card:hover{transform:translateY(-7px);border-color:rgba(0,240,255,.3)}.edu-card>span{font:8px 'Fira Code';color:#62757d}.edu-card h3{font-size:21px;line-height:1.1;margin:24px 0 12px}.edu-card strong{font-size:11px;color:#a0b0b6;line-height:1.5}.edu-card p{font:8px 'Fira Code';color:#5f727a;line-height:1.7;margin:18px 0 0}.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.project-card{min-height:330px;padding:27px;position:relative;overflow:hidden;transition:transform .2s var(--ease),border-color .3s}.project-card:hover{border-color:rgba(0,240,255,.3)}.project-card .index{font:8px 'Fira Code';color:#52656d}.project-icon{font-size:32px;color:var(--cyan);margin:40px 0 20px}.project-card h3{font-size:23px;line-height:1.1;margin-bottom:12px}.project-card p{max-width:500px;color:#74858d;font-size:12px;line-height:1.7}.chips{display:flex;gap:6px;flex-wrap:wrap;position:absolute;bottom:26px}.chips i{font:7px 'Fira Code';font-style:normal;padding:6px 8px;border:1px solid var(--line);color:#63767e}.card-arrow{position:absolute;right:25px;top:25px;color:var(--cyan);font-size:22px}.services-section{padding-top:80px}.service-grid{display:grid;grid-template-columns:repeat(4,1fr)}.service{padding:28px;min-height:230px;border-right:1px solid var(--line);transition:.35s}.service:last-child{border-right:0}.service:hover{background:rgba(0,240,255,.025)}.service>span{font:8px 'Fira Code';color:var(--cyan)}.service h3{font-size:13px;margin:35px 0 12px}.service p{color:#687a82;font-size:11px;line-height:1.7}.contact-section{padding-top:100px}.contact-box{min-height:470px;padding:70px;position:relative;overflow:hidden}.contact-box h2{font-size:clamp(48px,8vw,100px);line-height:.88;letter-spacing:-.07em;margin:20px 0}.contact-box>p:not(.eyebrow){color:#73858d;max-width:520px}.contact-links{display:flex;gap:8px;margin-top:30px;position:relative;z-index:3}.contact-orbit{position:absolute;width:450px;height:450px;border:1px solid rgba(0,240,255,.12);border-radius:50%;right:-120px;top:20px}.contact-orbit:before{content:'';position:absolute;inset:50px;border:1px dashed rgba(118,87,255,.2);border-radius:50%;animation:spin 16s linear infinite}.contact-orbit span{position:absolute;width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 15px var(--cyan)}.contact-orbit span:first-child{top:12%;left:15%}.contact-orbit span:last-child{bottom:18%;right:12%}footer{position:relative;z-index:2;width:min(1180px,92vw);margin:auto;padding:35px 0 100px;color:#44555d;font:8px 'Fira Code';display:flex;justify-content:space-between}.mobile-nav{display:none}@keyframes drift{to{transform:translate3d(80px,-50px,0) scale(1.08)}}@keyframes scan{to{transform:translateY(760vh)}}@keyframes meter{to{transform:scaleX(.9)}}@keyframes packet{to{opacity:.1}}@keyframes travel{50%{left:95%}}@keyframes dash{to{stroke-dashoffset:-160}}@keyframes pulse{to{transform:scale(1.2);opacity:0}}@keyframes blink{50%{opacity:.2}}@keyframes pathflow{to{transform:translateY(500px)}}@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:1000px){.hero-grid{grid-template-columns:1fr}.hero-console{max-width:600px}.deck-grid{grid-template-columns:repeat(3,1fr)}.career-card{width:calc(50% - 35px)}.career-card.reverse{margin-left:calc(50% + 35px)}.path-orb{right:-51px}.reverse .path-orb{left:-51px}.service-grid{grid-template-columns:repeat(2,1fr)}.service:nth-child(2){border-right:0;border-bottom:1px solid var(--line)}.service:nth-child(3){border-bottom:1px solid var(--line)}}
+@media(max-width:760px){body{padding-bottom:78px}.hud{height:62px;padding:0 18px}.desktop-nav{display:none}.status{font-size:7px}.progress{top:61px}.section{width:min(92vw,620px);padding:90px 0}.hero{padding-top:105px;padding-bottom:55px}.hero-grid{gap:45px}.hero h1{font-size:clamp(51px,15vw,78px)}.lede{font-size:13px}.hero-console{min-height:270px;padding:20px}.hero-skill-deck{margin-top:42px}.deck-grid{grid-template-columns:repeat(2,1fr)}.stack-chip{min-height:82px}.hero-orbit{right:-45vw;top:20%;width:95vw;height:95vw;opacity:.55}.skill-signal-row{margin-right:-4vw;padding-right:4vw}.topology{height:600px}.node:not(.core){width:122px;height:73px}.node.core{width:132px;height:132px;left:calc(50% - 66px);top:calc(50% - 66px)}.node.core strong{font-size:16px}.n1{left:2%;top:14%}.n2{right:2%;top:14%}.n3{left:2%;bottom:19%}.n4{right:2%;bottom:19%}.n5{left:calc(50% - 61px);bottom:3%}.links{opacity:.3}.career-path{padding-left:15px}.path-line{left:13px}.career-card,.career-card.reverse{width:100%;margin:0 0 24px 0;padding:22px 18px 22px 35px;grid-template-columns:1fr}.career-card time{position:static;display:block;margin-top:-4px;margin-bottom:12px}.path-index{position:absolute;left:-5px;top:23px;width:28px;height:28px}.path-orb,.reverse .path-orb{display:none}.career-main h3{font-size:19px}.career-main p:not(.tag){font-size:11px}.education-section{padding-top:45px}.edu-rail{display:block;padding-left:20px}.edu-track{top:30px;bottom:25px;left:24px;width:1px;height:auto;right:auto;background:linear-gradient(var(--cyan),rgba(118,87,255,.5),transparent)}.edu-node{padding:0 0 24px 28px}.edu-year{margin:0 0 10px}.edu-dot{position:absolute;left:-1px;top:2px;margin:0;width:10px;height:10px}.edu-card{min-height:0;padding:21px}.edu-card h3{font-size:19px;margin-top:18px}.project-grid{grid-template-columns:1fr}.project-card{min-height:300px}.service-grid{grid-template-columns:1fr}.service{border-right:0!important;border-bottom:1px solid var(--line)!important}.service:last-child{border-bottom:0!important}.contact-box{padding:45px 25px;min-height:500px}.contact-box h2{font-size:clamp(47px,14vw,75px)}.contact-links{flex-wrap:wrap}.contact-orbit{width:300px;height:300px;right:-140px;top:140px;opacity:.45}.mobile-nav{position:fixed;display:grid;grid-template-columns:repeat(5,1fr);left:10px;right:10px;bottom:10px;z-index:60;padding:8px 5px;border:1px solid rgba(157,226,238,.17);border-radius:20px;background:rgba(8,14,20,.7);backdrop-filter:blur(22px) saturate(150%);-webkit-backdrop-filter:blur(22px) saturate(150%);box-shadow:0 15px 50px rgba(0,0,0,.45),inset 0 1px rgba(255,255,255,.07)}.mobile-nav:before{content:'';position:absolute;inset:1px;border-radius:19px;background:linear-gradient(90deg,rgba(0,240,255,.08),transparent,rgba(118,87,255,.08));pointer-events:none}.mobile-nav a{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:50px;text-decoration:none;color:#63757d;border-radius:14px;transition:.25s}.mobile-nav a:active,.mobile-nav a:hover{color:#e8fbff;background:rgba(0,240,255,.06)}.mobile-nav i{font-style:normal;font-size:17px;line-height:1}.mobile-nav span{font:7px 'Fira Code';letter-spacing:.08em}footer{padding-bottom:100px;flex-direction:column;gap:8px}.noise{opacity:.02}}
+@media(max-width:420px){.deck-grid{grid-template-columns:1fr 1fr}.stack-chip small{font-size:6.5px}.hero-meta{gap:12px;flex-wrap:wrap}.topology{height:570px}.node:not(.core){width:108px;height:66px}.node:not(.core) strong{font-size:9px}.node.core{width:118px;height:118px;left:calc(50% - 59px);top:calc(50% - 59px)}.node.core strong{font-size:14px}.n1{top:15%}.n2{top:15%}.n3{bottom:18%}.n4{bottom:18%}.n5{left:calc(50% - 54px)}.career-card{padding-left:30px}.contact-links .btn{flex:1 1 130px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.cursor-glow,.grid-overlay,.aurora,.scanline{display:none}.reveal{opacity:1;transform:none}}
+
+/* V6 — route-map, pointer UI, stronger skill hierarchy and scroll choreography */
+html{scroll-padding-top:90px}
+body{cursor:default}
+a,button,.stack-chip,.career-card,.edu-card,.project-card,.service{cursor:pointer}
+.desktop-nav a,.stack-chip span,.node strong,.career-main h3,.edu-card h3,.project-card h3,.service h3{transition:color .22s ease,font-family .22s ease,letter-spacing .22s ease}
+.desktop-nav a:hover,.stack-chip:hover span,.career-card:hover .career-main h3,.edu-card:hover h3,.project-card:hover h3,.service:hover h3{font-family:'Fira Code',monospace;letter-spacing:.02em;color:var(--cyan)}
+/* Skills are a primary hero system, not an afterthought. */
+.hero-skill-deck{padding:20px;border-color:rgba(0,240,255,.17);box-shadow:0 30px 100px rgba(0,0,0,.3),inset 0 0 40px rgba(0,240,255,.025)}
+.deck-grid{grid-template-columns:repeat(3,1fr);gap:10px}
+.stack-chip{min-height:112px;padding:15px 16px;border-radius:14px;background:linear-gradient(145deg,rgba(14,28,37,.72),rgba(5,11,17,.55));box-shadow:inset 0 1px rgba(255,255,255,.035);overflow:hidden}
+.stack-chip:before{content:'';position:absolute;inset:0;background:radial-gradient(240px circle at var(--chip-x,50%) var(--chip-y,50%),rgba(0,240,255,.11),transparent 55%);opacity:0;transition:opacity .3s ease}
+.stack-chip:hover:before{opacity:1}
+.stack-chip b{position:relative;z-index:1;font-size:8px}
+.stack-chip span,.stack-chip small{position:relative;z-index:1}
+.stack-chip small{transition:color .25s ease}
+.stack-chip:hover small{color:#a9d8df}
+/* Remove the old loose signal pills entirely. */
+.skill-signal-row,.skill-strip{display:none!important}
+/* Career route: a moving signal line + alternating route cards. */
+.route-status{display:flex;align-items:center;gap:18px;margin:0 0 24px;color:#61757d;font:8px 'Fira Code';letter-spacing:.1em}
+.route-status span{color:var(--green);display:flex;align-items:center;gap:7px}.route-status span i{width:5px;height:5px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green);animation:blink 1.5s infinite}.route-status b{color:#a8bcc3;font-weight:500}.route-status em{margin-left:auto;color:#4c6068;font-style:normal}
+.career-path{padding-top:16px}
+.path-line{background:
+  radial-gradient(circle at 50% 0%,rgba(0,240,255,.95) 0 4px,transparent 5px),
+  radial-gradient(circle at 50% 50%,rgba(0,240,255,.82) 0 3px,transparent 4px),
+  radial-gradient(circle at 50% 100%,rgba(118,87,255,.85) 0 3px,transparent 4px),
+  linear-gradient(180deg,rgba(0,240,255,.16),rgba(0,240,255,.5) 20%,rgba(118,87,255,.36) 70%,transparent);
+  box-shadow:0 0 16px rgba(0,240,255,.06)}
+.path-line:before{content:'';position:absolute;left:50%;top:0;width:9px;height:9px;transform:translate(-50%,-1px);border-radius:50%;background:var(--cyan);box-shadow:0 0 25px var(--cyan)}
+.path-line:after{content:'';position:absolute;left:50%;bottom:0;width:7px;height:7px;transform:translate(-50%,0);border-radius:50%;background:var(--violet);box-shadow:0 0 22px rgba(118,87,255,.8)}
+.career-card{border-radius:20px;overflow:hidden;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.career-card:before{content:'';position:absolute;inset:0;background:linear-gradient(110deg,rgba(0,240,255,.045),transparent 38%,rgba(118,87,255,.025));opacity:0;transition:opacity .35s}.career-card:hover:before{opacity:1}
+.career-card .path-index{position:relative;z-index:2;transition:transform .35s var(--ease),background .35s}.career-card:hover .path-index{transform:scale(1.08);background:rgba(0,240,255,.06)}
+.path-orb{transition:transform .4s var(--ease),box-shadow .4s}.career-card:hover .path-orb{transform:scale(1.12);box-shadow:0 0 35px rgba(0,240,255,.22)}
+/* Education becomes a signal chain rather than plain cards. */
+.edu-rail{gap:22px}
+.edu-track{height:2px;opacity:.65;box-shadow:0 0 16px rgba(0,240,255,.15)}
+.edu-track:after{content:'';position:absolute;left:0;top:-2px;width:42px;height:6px;border-radius:99px;background:var(--cyan);filter:blur(3px);animation:eduFlow 4s linear infinite}
+.edu-node{transition:transform .45s var(--ease)}
+.edu-node:hover{transform:translateY(-6px)}
+.edu-dot{transition:transform .35s var(--ease),box-shadow .35s}.edu-node:hover .edu-dot{transform:scale(1.3);box-shadow:0 0 28px rgba(0,240,255,.7)}
+.edu-card{border-radius:20px;position:relative;overflow:hidden}.edu-card:after{content:'LEARNING NODE';position:absolute;right:18px;bottom:14px;color:rgba(0,240,255,.2);font:6px 'Fira Code';letter-spacing:.14em}
+/* Scroll choreography: sections lift into place and route cards reveal with depth. */
+.section-head.reveal{transition-duration:.7s}.career-card.reveal:nth-child(2){transition-delay:.08s}.career-card.reveal:nth-child(3){transition-delay:.16s}.career-card.reveal:nth-child(4){transition-delay:.24s}.edu-node:nth-child(2) .edu-card{transition-delay:.08s}.edu-node:nth-child(3) .edu-card{transition-delay:.16s}.edu-node:nth-child(4) .edu-card{transition-delay:.24s}
+/* Desktop pointer: keeps the native hand cursor on actionable UI, with a lightweight HUD ring. */
+.pointer-ui{position:fixed;left:0;top:0;width:34px;height:34px;z-index:100;pointer-events:none;transform:translate3d(-100px,-100px,0);opacity:0;transition:opacity .18s ease}.pointer-ui span{position:absolute;inset:0;border:1px solid rgba(0,240,255,.42);border-radius:50%;box-shadow:0 0 20px rgba(0,240,255,.08)}.pointer-ui b{position:absolute;left:40px;top:10px;white-space:nowrap;color:#78929a;font:7px 'Fira Code';letter-spacing:.1em;opacity:0;transition:opacity .18s}.pointer-ui.active{opacity:1}.pointer-ui.active b{opacity:1}.pointer-ui.text-mode span{border-radius:7px;width:9px;height:18px;left:12px;top:8px;border-width:1px 1px 1px 0}.pointer-ui.text-mode b{content:''}.pointer-ui.hand-mode span{border-color:rgba(0,255,157,.65);box-shadow:0 0 24px rgba(0,255,157,.15)}
+@keyframes eduFlow{to{transform:translateX(780px)}}
+@media(max-width:760px){.pointer-ui{display:none}.deck-grid{grid-template-columns:1fr 1fr}.hero-skill-deck{padding:14px}.stack-chip{min-height:96px}.route-status{gap:10px;flex-wrap:wrap}.route-status em{width:100%;margin-left:0}.career-card:hover{transform:none}.edu-node:hover{transform:none}}
+@media(min-width:761px){.career-card:nth-of-type(even){transform:translateX(0)}.career-card:nth-of-type(even):hover{transform:translateY(-5px) translateX(3px)}}
+
+/* V7 visual restoration + deeper motion pass */
+:root{--ease:cubic-bezier(.16,1,.3,1)}
+.section{width:min(1240px,94vw);padding-left:0;padding-right:0}
+.hero h1{font-size:clamp(62px,9.3vw,124px)}
+.lede{font-size:17px}
+.glass{background:linear-gradient(145deg,rgba(19,30,41,.68),rgba(5,10,16,.48));border:1px solid rgba(174,231,241,.17);box-shadow:0 24px 90px rgba(0,0,0,.34),inset 0 1px rgba(255,255,255,.045),inset 0 -1px rgba(0,240,255,.025);backdrop-filter:blur(20px) saturate(135%);-webkit-backdrop-filter:blur(20px) saturate(135%)}
+#network-canvas{opacity:.72}
+.project-grid{gap:18px}
+.project-card{min-height:350px;padding:30px;isolation:isolate;border-radius:24px;transition:transform .65s var(--ease),border-color .4s,box-shadow .5s,background .4s}
+.project-card:before{content:'';position:absolute;inset:0;background:radial-gradient(280px circle at var(--card-x,50%) var(--card-y,50%),rgba(0,240,255,.105),transparent 62%);opacity:0;transition:opacity .35s;z-index:-1}
+.project-card:hover:before{opacity:1}
+.project-card:hover{border-color:rgba(0,240,255,.38);box-shadow:0 30px 90px rgba(0,0,0,.38),0 0 40px rgba(0,240,255,.045);transform:translateY(-8px)}
+.project-sheen{position:absolute;inset:-80% -20%;background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.055) 49%,rgba(0,240,255,.08) 51%,transparent 58%);transform:translateX(-35%) rotate(3deg);transition:transform 1.1s var(--ease);pointer-events:none;z-index:0}
+.project-card:hover .project-sheen{transform:translateX(35%) rotate(3deg)}
+.project-gridlines{position:absolute;inset:0;opacity:.13;background-image:linear-gradient(rgba(0,240,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(0,240,255,.12) 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(to bottom,transparent,black 22%,black 72%,transparent);pointer-events:none;z-index:0}
+.project-card>*:not(.project-sheen):not(.project-gridlines){z-index:1}
+.project-icon{width:62px;height:62px;display:grid;place-items:center;border:1px solid rgba(0,240,255,.22);border-radius:18px;background:rgba(0,240,255,.035);box-shadow:inset 0 0 25px rgba(0,240,255,.05),0 0 25px rgba(0,240,255,.04);font-size:30px;margin:42px 0 24px;transition:transform .5s var(--ease),box-shadow .5s}
+.project-card:hover .project-icon{transform:translateY(-4px) rotate(-4deg) scale(1.06);box-shadow:inset 0 0 30px rgba(0,240,255,.1),0 0 30px rgba(0,240,255,.1)}
+.project-card .index{position:relative;display:inline-block}
+.project-card h3{position:relative}
+.project-card p{position:relative}
+.chips{z-index:2}
+.card-arrow{transition:transform .4s var(--ease),color .3s}
+.project-card:hover .card-arrow{transform:translate(5px,-5px) rotate(8deg)}
+/* Education: one straight chronological walk, 2019 -> 2025. */
+.education-section{padding-top:80px}
+.edu-rail{display:block;padding:35px 0 20px}
+.edu-track{left:0;right:0;top:88px;height:2px;background:linear-gradient(90deg,rgba(0,240,255,.08),var(--cyan),rgba(118,87,255,.7),rgba(0,240,255,.08));opacity:.55}
+.edu-track:after{content:'';position:absolute;top:-3px;left:-2%;width:10%;height:8px;border-radius:50%;background:rgba(0,240,255,.75);filter:blur(5px);animation:eduWalk 6s linear infinite}
+.edu-node{display:grid;grid-template-rows:auto 26px 1fr;min-width:0}
+.edu-year{margin:0 0 0 18px}
+.edu-dot{margin:13px 0 18px 18px;width:13px;height:13px;background:rgba(7,16,22,.8);border:1px solid var(--cyan);box-shadow:0 0 22px rgba(0,240,255,.42);transition:.4s var(--ease)}
+.edu-card{min-height:245px;border-radius:22px}
+.edu-node:hover .edu-dot{transform:scale(1.18);box-shadow:0 0 30px rgba(0,240,255,.7)}
+/* Visual handoff: the final education node points into the work route without a neon green orb. */
+.education-section:after{content:'2019  ─────────  2022  ─────────  2025  ─────────  COGNIZANT';display:block;margin:34px auto -35px;width:max-content;max-width:100%;color:rgba(0,240,255,.32);font:7px 'Fira Code';letter-spacing:.14em;text-align:center}
+/* Restore stronger scroll choreography. */
+.reveal{transform:translate3d(0,55px,0) scale(.985);filter:blur(3px);transition:opacity .75s var(--ease),transform .9s var(--ease),filter .75s var(--ease)}
+.reveal.visible{transform:none;filter:blur(0)}
+.project-card.reveal:nth-child(1){transition-delay:.03s}.project-card.reveal:nth-child(2){transition-delay:.12s}.project-card.reveal:nth-child(3){transition-delay:.21s}.project-card.reveal:nth-child(4){transition-delay:.30s}
+/* Liquid-glass navigation + active tracking */
+.mobile-nav{background:linear-gradient(135deg,rgba(19,30,40,.72),rgba(5,10,16,.55));border-color:rgba(180,230,240,.22);box-shadow:0 20px 65px rgba(0,0,0,.52),inset 0 1px rgba(255,255,255,.1),inset 0 -1px rgba(0,240,255,.04);backdrop-filter:blur(26px) saturate(170%);-webkit-backdrop-filter:blur(26px) saturate(170%)}
+.mobile-nav a.active{color:#effcff;background:linear-gradient(180deg,rgba(0,240,255,.13),rgba(0,240,255,.035));box-shadow:inset 0 0 20px rgba(0,240,255,.055),0 0 20px rgba(0,240,255,.045)}
+/* More particles without making the canvas expensive: higher count + spatial buckets remain enabled. */
+@media(min-width:1200px){.project-grid{grid-template-columns:repeat(2,1fr)}.section-head h2{font-size:clamp(44px,5.5vw,78px)}}
+@media(max-width:760px){.section{width:92vw}.hero h1{font-size:clamp(55px,16vw,84px)}.lede{font-size:14px}.project-card{min-height:325px;border-radius:20px}.project-card:hover{transform:none}.project-sheen{opacity:.5}.edu-rail{padding-left:28px}.edu-track{left:5px;right:auto;top:30px;bottom:25px;width:2px;height:auto;background:linear-gradient(var(--cyan),rgba(118,87,255,.65),transparent)}.edu-track:after{width:8px;height:8px;left:-3px;top:-1px;animation:eduWalkMobile 7s linear infinite}.edu-node{display:block;padding:0 0 25px 28px}.edu-year{margin:0 0 10px}.edu-dot{position:absolute;left:-1px;top:3px;margin:0}.education-section:after{font-size:6px;margin-top:8px;content:'2019  →  2022  →  2025  →  COGNIZANT'}}
+@keyframes eduWalk{from{left:-2%}to{left:92%}}@keyframes eduWalkMobile{from{top:0}to{top:calc(100% - 8px)}}
+
+
+/* V10 — precision visual refinement */
+:root{--glass-edge:rgba(188,236,245,.19);--glass-hi:rgba(255,255,255,.07)}
+/* Denser constellation without making content noisy. */
+#network-canvas{opacity:.82;filter:saturate(1.08)}
+/* Experience is intentionally the professional layer; education starts a fresh visual chapter. */
+.path-section{padding-bottom:92px}
+.education-section{padding-top:112px;border-top:1px solid rgba(136,208,222,.08)}
+.education-section .section-head{margin-bottom:48px}
+.career-path{max-width:1080px;margin:0 auto}
+.career-card{box-shadow:0 22px 70px rgba(0,0,0,.24),inset 0 1px rgba(255,255,255,.045)}
+.career-card:hover{box-shadow:0 28px 90px rgba(0,0,0,.34),0 0 35px rgba(0,240,255,.06),inset 0 1px rgba(255,255,255,.08)}
+/* Education route becomes a clean horizontal chronological walk on desktop. */
+.edu-rail{max-width:1120px;margin:0 auto;padding-top:40px}
+.edu-card{background:linear-gradient(145deg,rgba(20,31,41,.72),rgba(7,13,19,.5));border-color:var(--glass-edge);box-shadow:0 22px 70px rgba(0,0,0,.26),inset 0 1px var(--glass-hi)}
+.edu-card:hover{border-color:rgba(0,240,255,.38);box-shadow:0 25px 80px rgba(0,0,0,.34),0 0 30px rgba(0,240,255,.055)}
+.edu-track{background:linear-gradient(90deg,rgba(0,240,255,.08),rgba(0,240,255,.72),rgba(118,87,255,.62),rgba(0,240,255,.08));box-shadow:0 0 20px rgba(0,240,255,.1)}
+.edu-track:after{background:linear-gradient(90deg,transparent,rgba(255,255,255,.95),var(--cyan),transparent);box-shadow:0 0 18px rgba(0,240,255,.7)}
+/* Replace the old green mouse ring with a neutral glass focus marker. */
+.pointer-ui span{border-radius:10px;width:22px;height:22px;left:6px;top:6px;border:1px solid rgba(224,248,255,.55);background:linear-gradient(135deg,rgba(255,255,255,.045),rgba(0,240,255,.035));box-shadow:0 0 24px rgba(0,240,255,.1),inset 0 0 14px rgba(255,255,255,.035);transform:rotate(45deg);transition:all .2s var(--ease)}
+.pointer-ui b{left:38px;top:8px;color:#9bb5bd;background:rgba(6,12,17,.58);border:1px solid rgba(170,225,236,.12);padding:5px 7px;border-radius:7px;backdrop-filter:blur(12px);box-shadow:0 8px 25px rgba(0,0,0,.25)}
+.pointer-ui.hand-mode span{border-color:rgba(224,248,255,.78);box-shadow:0 0 30px rgba(0,240,255,.18),inset 0 0 15px rgba(0,240,255,.08);transform:rotate(45deg) scale(1.12)}
+.pointer-ui.text-mode span{width:2px;height:18px;left:16px;top:8px;border-radius:2px;transform:none;background:rgba(224,248,255,.85);box-shadow:0 0 14px rgba(0,240,255,.3)}
+/* Buttons: glass capsules with a moving signal rather than flat rectangles. */
+.btn{position:relative;overflow:hidden;border-radius:12px;min-height:50px;padding:0 20px;background:linear-gradient(135deg,rgba(255,255,255,.055),rgba(255,255,255,.012));border-color:rgba(174,231,241,.2);box-shadow:inset 0 1px rgba(255,255,255,.055),0 12px 30px rgba(0,0,0,.16)}
+.btn:before{content:'';position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.13) 48%,rgba(0,240,255,.09) 52%,transparent 65%);transform:translateX(-120%);transition:transform .8s var(--ease);pointer-events:none}
+.btn:hover:before{transform:translateX(120%)}
+.btn:hover{transform:translateY(-2px);border-color:rgba(0,240,255,.48);background:linear-gradient(135deg,rgba(0,240,255,.08),rgba(255,255,255,.02));box-shadow:inset 0 1px rgba(255,255,255,.08),0 16px 38px rgba(0,0,0,.22),0 0 24px rgba(0,240,255,.055)}
+.btn.primary{color:#041013;background:linear-gradient(135deg,#00f0ff,#8ff9ff);box-shadow:0 12px 35px rgba(0,240,255,.15),inset 0 1px rgba(255,255,255,.55)}
+.btn.primary:hover{color:#041013;background:linear-gradient(135deg,#59f5ff,#b8fdff);box-shadow:0 18px 44px rgba(0,240,255,.2),0 0 30px rgba(0,240,255,.1)}
+/* Navigation glass */
+.mobile-nav{grid-template-columns:repeat(6,1fr);border-radius:22px;background:linear-gradient(135deg,rgba(20,31,42,.76),rgba(5,10,16,.62));border-color:rgba(201,238,246,.23);box-shadow:0 24px 70px rgba(0,0,0,.55),inset 0 1px rgba(255,255,255,.13),inset 0 -1px rgba(0,240,255,.05)}
+.mobile-nav a.active{transform:translateY(-3px);border:1px solid rgba(0,240,255,.16);background:linear-gradient(180deg,rgba(0,240,255,.15),rgba(255,255,255,.025));box-shadow:inset 0 0 22px rgba(0,240,255,.06),0 7px 22px rgba(0,0,0,.18)}
+.mobile-nav a{min-height:52px}
+/* A subtle section divider makes the experience-to-education transition intentional. */
+.education-section:before{content:'ACADEMIC FOUNDATION';display:block;width:max-content;margin:-54px auto 44px;padding:7px 11px;border:1px solid rgba(0,240,255,.12);border-radius:999px;color:rgba(153,213,223,.55);background:rgba(9,17,23,.5);font:7px 'Fira Code';letter-spacing:.16em;box-shadow:inset 0 1px rgba(255,255,255,.05)}
+@media(max-width:760px){
+ .section{width:92vw;padding-top:105px;padding-bottom:105px}
+ .path-section{padding-bottom:82px}
+ .education-section{padding-top:96px}
+ .education-section:before{margin:-38px auto 32px}
+ .mobile-nav{left:8px;right:8px;bottom:max(8px,env(safe-area-inset-bottom));padding:7px 4px;border-radius:20px}
+ .mobile-nav a{min-height:50px}
+ .mobile-nav span{font-size:6.5px}
+ .mobile-nav i{font-size:16px}
+ .edu-rail{padding-top:25px}
+}
+@media(min-width:761px){
+ .desktop-nav a{position:relative;padding:8px 0}
+ .desktop-nav a:after{content:'';position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--cyan);transition:right .35s var(--ease)}
+ .desktop-nav a:hover:after,.desktop-nav a.active:after{right:0}
+ .hero-actions .btn{min-width:150px}
+}
+
+/* V11 precision pass — denser side constellation and continuous journey signal. */
+#network-canvas{opacity:.9}
+.hero-console{animation:telemetryFloat 6s ease-in-out infinite}
+.telemetry-row{position:relative;transition:transform .45s var(--ease),background .45s var(--ease),border-color .45s}
+.telemetry-row:hover,.telemetry-row.touch-active{transform:translate3d(6px,-3px,0);background:linear-gradient(90deg,rgba(0,240,255,.035),transparent);border-radius:8px}
+.telemetry-row:after{content:'';position:absolute;left:-8px;right:-8px;bottom:-7px;height:1px;background:linear-gradient(90deg,transparent,rgba(0,240,255,.18),transparent);transform:scaleX(.35);transition:transform .45s var(--ease)}
+.telemetry-row:hover:after,.telemetry-row.touch-active:after{transform:scaleX(1)}
+@keyframes telemetryFloat{0%,100%{transform:translate3d(0,0,0) rotate(0deg)}50%{transform:translate3d(0,-7px,0) rotate(.18deg)}}
+
+/* The journey signal visually links the lower education chapter back into the professional route. */
+.education-section{position:relative;overflow:visible}
+.journey-bridge{position:absolute;top:-36px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;z-index:4;pointer-events:none}
+.journey-bridge:before,.journey-bridge:after{content:'';width:70px;height:1px;background:linear-gradient(90deg,transparent,rgba(0,240,255,.35),transparent)}
+.journey-bridge b{font:7px 'Fira Code';letter-spacing:.18em;color:rgba(164,218,228,.52);padding:7px 10px;border:1px solid rgba(0,240,255,.12);border-radius:999px;background:rgba(8,15,21,.62);backdrop-filter:blur(14px);box-shadow:inset 0 1px rgba(255,255,255,.05)}
+.journey-bridge span{position:absolute;width:6px;height:6px;border-radius:50%;background:#fff;box-shadow:0 0 12px #fff,0 0 28px var(--cyan);animation:bridgePulse 2.8s ease-in-out infinite}
+@keyframes bridgePulse{0%,100%{transform:translateX(-68px);opacity:.25}50%{transform:translateX(68px);opacity:1}}
+.edu-track:before{content:'';position:absolute;left:0;top:-4px;width:100%;height:9px;background:linear-gradient(90deg,transparent,rgba(0,240,255,.12),transparent);filter:blur(5px);border-radius:999px}
+.edu-track:after{animation:eduWalk 5.8s linear infinite,eduPulse 1.8s ease-in-out infinite alternate}
+@keyframes eduPulse{to{filter:blur(7px);opacity:.7}}
+
+/* Keep the education signal conceptually continuous into the professional route. */
+.path-line:after{content:'';position:absolute;bottom:-16px;left:-2px;width:5px;height:20px;background:linear-gradient(var(--cyan),transparent);filter:blur(1px)}
+
+/* Side-field dots: subtle visual density at the edges without competing with content. */
+body:after{content:'';position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.38;background-image:radial-gradient(circle,rgba(0,240,255,.34) 0 1px,transparent 1.7px),radial-gradient(circle,rgba(118,87,255,.26) 0 1px,transparent 1.7px);background-size:72px 72px,103px 103px;background-position:8px 12px,44px 58px;mask-image:linear-gradient(90deg,black,transparent 20%,transparent 80%,black)}
+
+/* Liquid-glass touch lift — also works when a finger crosses a card on mobile. */
+.service.touch-active,.telemetry-row.touch-active,.stack-chip.touch-active,.project-card.touch-active,.edu-card.touch-active,.career-card.touch-active{transform:translate3d(0,-4px,0);border-color:rgba(0,240,255,.34);box-shadow:0 18px 45px rgba(0,0,0,.25),0 0 24px rgba(0,240,255,.06)}
+.service,.telemetry-row,.stack-chip,.project-card,.edu-card,.career-card{background-image:radial-gradient(180px circle at var(--touch-x,50%) var(--touch-y,50%),rgba(0,240,255,.055),transparent 70%),linear-gradient(145deg,rgba(255,255,255,.025),transparent 60%)}
+
+/* Capability cards are interactive modules rather than a flat table. */
+.service{position:relative;overflow:hidden}
+.service:before{content:'';position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.07) 50%,transparent 65%);transform:translateX(-120%);transition:transform .9s var(--ease);pointer-events:none}
+.service:hover:before,.service.touch-active:before{transform:translateX(120%)}
+
+/* Mobile navigation is always viewport-anchored, above the page, and safe-area aware. */
+@media(max-width:760px){
+ .mobile-nav{position:fixed!important;display:grid!important;left:8px!important;right:8px!important;bottom:max(8px,env(safe-area-inset-bottom))!important;z-index:9999!important;transform:translateZ(0);padding-bottom:max(7px,env(safe-area-inset-bottom));}
+ .mobile-nav a{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+ .journey-bridge{top:-26px}
+ .journey-bridge:before,.journey-bridge:after{width:28px}
+ .journey-bridge b{font-size:6px}
+ body:after{opacity:.26;background-size:58px 58px,86px 86px}
+ .hero-console{animation-duration:7s}
+}
+@media(prefers-reduced-motion:reduce){.hero-console{animation:none}.edu-track:after,.journey-bridge span{animation:none}}
+
+/* One continuous chronology: the signal begins at the 10th foundation and travels upward through education into Cognizant. */
+.career-education-wrap{position:relative;z-index:2}
+/* One shared center rail: the journey signal uses the exact same axis as Work Experience and Education. */
+.journey-spine{position:absolute;left:50%;right:auto;top:0;bottom:0;width:2px;transform:translateX(-50%);background:linear-gradient(180deg,rgba(0,240,255,.08),rgba(0,240,255,.28) 18%,rgba(118,87,255,.18) 72%,rgba(0,240,255,.08));opacity:.34;pointer-events:none}
+.journey-spine:before{content:'COGNIZANT';position:absolute;top:-3px;right:9px;white-space:nowrap;color:rgba(142,211,222,.32);font:6px 'Fira Code';letter-spacing:.16em}
+.journey-spine:after{content:'10TH FOUNDATION';position:absolute;bottom:-3px;right:9px;white-space:nowrap;color:rgba(142,211,222,.25);font:6px 'Fira Code';letter-spacing:.14em}
+.journey-spine i{position:absolute;left:-3px;bottom:0;width:7px;height:90px;border-radius:999px;background:linear-gradient(180deg,transparent,rgba(255,255,255,.95),var(--cyan),transparent);box-shadow:0 0 18px rgba(0,240,255,.7),0 0 40px rgba(0,240,255,.18);filter:blur(.15px);animation:journeyTravel 8s linear infinite}
+@keyframes journeyTravel{from{transform:translateY(20px)}to{transform:translateY(calc(-100% - 90vh))}}
+@media(max-width:760px){.journey-spine{right:4px;top:2%;bottom:2%;opacity:.28}.journey-spine:before,.journey-spine:after{display:none}.journey-spine i{height:65px;animation-duration:7s}}
+
+/* V12 background density: stronger side-field constellations while keeping the main formation readable. */
+@media(min-width:1200px){#network-canvas{opacity:.96}}
+body:after{opacity:.52;background-image:radial-gradient(circle,rgba(0,240,255,.42) 0 1px,transparent 1.8px),radial-gradient(circle,rgba(118,87,255,.31) 0 1px,transparent 1.8px),radial-gradient(circle,rgba(180,240,255,.18) 0 .8px,transparent 1.5px);background-size:58px 58px,87px 87px,137px 137px;background-position:7px 17px,31px 43px,71px 9px;mask-image:linear-gradient(90deg,black,transparent 16%,transparent 84%,black)}
+/* The education rail starts at 2019 and hands the same travelling signal into the career spine. */
+.education-section .edu-track{box-shadow:0 0 24px rgba(0,240,255,.16),0 0 55px rgba(0,240,255,.06)}
+.journey-spine{width:2px;opacity:.62;background:linear-gradient(180deg,rgba(0,240,255,.08),rgba(0,240,255,.58) 18%,rgba(118,87,255,.36) 72%,rgba(0,240,255,.08));box-shadow:0 0 16px rgba(0,240,255,.08)}
+.journey-spine i{width:9px;left:-4px;height:100px}
+@media(max-width:760px){body:after{opacity:.42;background-size:50px 50px,79px 79px,119px 119px}.journey-spine{right:4px;width:2px;opacity:.38}.journey-spine i{width:8px;left:-3px;height:70px}}
+
+/* V13 — Education Stack mirrors the Work Experience route.
+   Visual order: B.Sc. (top) → 12th (middle) → 10th (bottom).
+   The source order remains chronological for accessibility, while the travelling signal moves upward from 2019. */
+.education-section .edu-rail{position:relative;display:block;min-height:820px;padding:16px 0 30px;overflow:visible}
+.education-section .edu-track{position:absolute;left:50%;top:0;bottom:0;width:1px;height:auto;margin:0;background:linear-gradient(180deg,rgba(0,240,255,.08),rgba(0,240,255,.62) 24%,rgba(118,87,255,.42) 72%,transparent);opacity:.7;box-shadow:0 0 18px rgba(0,240,255,.08);z-index:0}
+.education-section .edu-track:after{content:'';position:absolute;left:50%;top:auto;bottom:0;width:4px;height:150px;border-radius:999px;transform:translateX(-50%);background:linear-gradient(transparent,#fff,var(--cyan),transparent);filter:blur(1px);box-shadow:0 0 20px rgba(0,240,255,.85),0 0 48px rgba(0,240,255,.2);animation:eduRise 6s linear infinite}
+.education-section .edu-track:before{content:'COGNIZANT / NEXT NODE';position:absolute;top:-2px;left:18px;white-space:nowrap;color:rgba(155,213,223,.28);font:7px 'Fira Code';letter-spacing:.15em}
+.education-section .edu-node{position:relative;width:calc(50% - 55px);padding:0;margin:0 0 65px;display:grid;grid-template-columns:44px 1fr;gap:18px;z-index:2;transition:transform .45s var(--ease);}
+.education-section .edu-node.edu-foundation{position:absolute;left:0;bottom:0;margin:0}
+.education-section .edu-node.edu-hsc{position:absolute;right:0;top:50%;transform:translateY(-50%)}
+.education-section .edu-node.edu-degree{position:absolute;left:0;top:0;margin:0}
+.education-section .edu-node:hover{transform:translateY(-5px)}
+.education-section .edu-node.edu-hsc:hover{transform:translateY(calc(-50% - 5px))}
+.education-section .edu-year{position:absolute;right:22px;top:29px;margin:0;color:#4f626a;font:8px 'Fira Code';z-index:3}
+.education-section .edu-dot{position:absolute;top:28px;right:-71px;width:32px;height:32px;margin:0;border-radius:50%;display:grid;place-items:center;background:#071016;border:1px solid rgba(0,240,255,.35);box-shadow:0 0 25px rgba(0,240,255,.08);z-index:4}
+.education-section .edu-dot:after{content:'';width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 14px var(--cyan)}
+.education-section .edu-hsc .edu-dot{left:-71px;right:auto}
+.education-section .edu-card{min-height:245px;padding:26px;border-radius:20px;position:relative;overflow:hidden;transition:transform .45s var(--ease),border-color .4s,box-shadow .4s;background:rgba(8,14,20,.64);border:1px solid rgba(139,205,217,.1);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.education-section .edu-card:before{content:'';position:absolute;inset:0;background:linear-gradient(110deg,rgba(0,240,255,.045),transparent 38%,rgba(118,87,255,.025));opacity:0;transition:opacity .35s;pointer-events:none}
+.education-section .edu-node:hover .edu-card{border-color:rgba(0,240,255,.3);box-shadow:0 25px 70px rgba(0,0,0,.25)}
+.education-section .edu-node:hover .edu-card:before{opacity:1}
+.education-section .edu-card>span{font:8px 'Fira Code';color:var(--cyan)}
+.education-section .edu-card h3{font-size:22px;line-height:1.1;margin:9px 0 12px}
+.education-section .edu-card strong{display:block;font-size:11px;color:#a0b0b6;line-height:1.5;max-width:88%}
+.education-section .edu-card p{font:8px 'Fira Code';color:#5f727a;line-height:1.7;margin:18px 0 0}
+.education-section .edu-foundation .edu-dot,.education-section .edu-degree .edu-dot{right:-71px}
+@keyframes eduRise{from{transform:translate(-50%,120px)}to{transform:translate(-50%,calc(-100% - 140px))}}
+
+/* The education route hands visually into the professional route above. */
+.education-section:after{content:'2019 FOUNDATION  →  12TH  →  B.SC.  →  PROFESSIONAL ROUTE';display:block;width:max-content;max-width:92vw;margin:20px auto 0;padding:8px 12px;border:1px solid rgba(0,240,255,.1);border-radius:999px;color:rgba(142,203,214,.3);background:rgba(7,13,19,.42);backdrop-filter:blur(12px);font:7px 'Fira Code';letter-spacing:.11em}
+
+@media(max-width:760px){
+  .education-section .edu-rail{min-height:0;padding:18px 0 8px 15px;display:block}
+  .education-section .edu-track{left:13px;top:0;bottom:0;width:2px}
+  .education-section .edu-track:before{display:none}
+  .education-section .edu-track:after{left:0;width:7px;height:70px;animation:eduRiseMobile 6s linear infinite}
+  .education-section .edu-node,.education-section .edu-node.edu-foundation,.education-section .edu-node.edu-hsc,.education-section .edu-node.edu-degree{position:relative;left:auto;right:auto;top:auto;bottom:auto;width:100%;margin:0 0 24px;padding:0 0 0 30px;display:block;transform:none}
+  .education-section .edu-node:hover,.education-section .edu-node.edu-hsc:hover{transform:none}
+  .education-section .edu-year{position:static;margin:0 0 9px;font-size:8px}
+  .education-section .edu-dot,.education-section .edu-hsc .edu-dot,.education-section .edu-foundation .edu-dot,.education-section .edu-degree .edu-dot{left:-7px;right:auto;top:2px;width:16px;height:16px}
+  .education-section .edu-dot:after{width:5px;height:5px}
+  .education-section .edu-card{min-height:0;padding:21px}
+  .education-section .edu-card h3{font-size:19px;margin-top:18px}
+  .education-section:after{margin-top:12px;line-height:1.5;text-align:center}
+}
+@keyframes eduRiseMobile{from{transform:translateY(70px)}to{transform:translateY(calc(-100% - 70px))}}
+
+
+/* V14 — Education Stack now uses the same route-map language as Work Experience.
+   The single journey signal starts at 10th (bottom) and travels upward to Cognizant (top). */
+.career-education-wrap{position:relative;isolation:isolate}
+.career-education-wrap>.journey-spine{
+  left:50%;right:auto;top:0;bottom:0;width:2px;transform:translateX(-50%);
+  opacity:.72;z-index:0;
+  background:linear-gradient(180deg,rgba(0,240,255,.10),rgba(0,240,255,.62) 14%,rgba(118,87,255,.38) 58%,rgba(0,240,255,.18) 88%,rgba(0,240,255,.08));
+  box-shadow:0 0 22px rgba(0,240,255,.08);
+}
+.career-education-wrap>.journey-spine:before{
+  content:'COGNIZANT / END NODE';top:8px;right:14px;color:rgba(156,225,235,.42);font-size:7px;
+}
+.career-education-wrap>.journey-spine:after{
+  content:'2019 / 10TH FOUNDATION';bottom:8px;right:14px;color:rgba(156,225,235,.34);font-size:7px;
+}
+.career-education-wrap>.journey-spine i{
+  left:50%;bottom:0;width:10px;height:120px;transform:translateX(-50%);
+  animation:fullJourneyTravel 9s cubic-bezier(.55,0,.25,1) infinite;
+  z-index:2;
+}
+@keyframes fullJourneyTravel{
+  0%{transform:translate(-50%,10px);opacity:.15}
+  7%{opacity:1}
+  88%{opacity:1}
+  100%{transform:translate(-50%,calc(-100% - 100vh));opacity:.12}
+}
+
+/* Keep the Work Experience route as the reference visual language. */
+.career-path{position:relative;z-index:2}
+
+/* Education uses the same alternating card geometry as Work Experience. */
+.education-section .edu-rail{
+  position:relative;max-width:1080px;min-height:900px;margin:0 auto;padding:30px 0 70px;overflow:visible;z-index:2;
+}
+.education-section .edu-track{
+  position:absolute;left:50%;top:20px;bottom:20px;width:2px;height:auto;margin:0;transform:translateX(-50%);
+  background:linear-gradient(180deg,rgba(0,240,255,.08),rgba(0,240,255,.34),rgba(118,87,255,.25),rgba(0,240,255,.08));
+  box-shadow:0 0 20px rgba(0,240,255,.08);opacity:.5;z-index:0;
+}
+.education-section .edu-track:before{display:none}
+.education-section .edu-track:after{display:none}
+.education-section .edu-node{
+  position:absolute;width:calc(50% - 72px);display:block;margin:0;padding:0;z-index:2;
+}
+.education-section .edu-node.edu-degree{left:0;top:35px}
+.education-section .edu-node.edu-hsc{right:0;top:350px}
+.education-section .edu-node.edu-foundation{left:0;top:665px;bottom:auto}
+.education-section .edu-year{
+  position:absolute;top:22px;right:20px;margin:0;color:#596c74;font:8px 'Fira Code';letter-spacing:.05em;z-index:4;
+}
+.education-section .edu-node.edu-hsc .edu-year{left:20px;right:auto}
+.education-section .edu-dot{
+  position:absolute;top:24px;right:-87px;margin:0;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(5,12,17,.92);border:1px solid rgba(0,240,255,.34);box-shadow:0 0 24px rgba(0,240,255,.08);z-index:4;
+}
+.education-section .edu-node.edu-hsc .edu-dot{left:-87px;right:auto}
+.education-section .edu-dot:after{content:'';width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 14px var(--cyan)}
+.education-section .edu-card{
+  min-height:245px;padding:30px;border-radius:22px;position:relative;overflow:hidden;
+  background:linear-gradient(145deg,rgba(15,24,33,.76),rgba(6,11,17,.55));
+  border:1px solid rgba(174,231,241,.17);box-shadow:0 22px 70px rgba(0,0,0,.24),inset 0 1px rgba(255,255,255,.045);
+  backdrop-filter:blur(20px) saturate(135%);-webkit-backdrop-filter:blur(20px) saturate(135%);
+  transition:transform .65s var(--ease),border-color .4s,box-shadow .5s,background .4s;
+}
+.education-section .edu-card:before{
+  content:'';position:absolute;inset:0;background:radial-gradient(260px circle at var(--touch-x,50%) var(--touch-y,50%),rgba(0,240,255,.075),transparent 65%),linear-gradient(115deg,rgba(0,240,255,.035),transparent 45%,rgba(118,87,255,.025));opacity:.75;pointer-events:none;
+}
+.education-section .edu-card:hover{transform:translateY(-7px);border-color:rgba(0,240,255,.38);box-shadow:0 30px 90px rgba(0,0,0,.36),0 0 34px rgba(0,240,255,.06),inset 0 1px rgba(255,255,255,.08)}
+.education-section .edu-card>span{position:relative;display:block;font:8px 'Fira Code';letter-spacing:.14em;color:var(--cyan)}
+.education-section .edu-card h3{position:relative;font-size:24px;line-height:1.08;margin:12px 0 13px;letter-spacing:-.025em}
+.education-section .edu-card strong{position:relative;display:block;color:#a5b7be;font-size:11px;line-height:1.55;max-width:92%}
+.education-section .edu-card p{position:relative;color:#5f737b;font:8px 'Fira Code';line-height:1.7;margin:18px 0 0;letter-spacing:.06em}
+.education-section .edu-node:hover .edu-dot{transform:scale(1.14);border-color:rgba(0,240,255,.72);box-shadow:0 0 30px rgba(0,240,255,.35)}
+.education-section .edu-node.edu-foundation:after,
+.education-section .edu-node.edu-degree:after,
+.education-section .edu-node.edu-hsc:after{
+  content:'';position:absolute;top:39px;height:1px;width:72px;background:linear-gradient(90deg,rgba(0,240,255,.1),rgba(0,240,255,.35));z-index:1;pointer-events:none;
+}
+.education-section .edu-node.edu-degree:after,.education-section .edu-node.edu-foundation:after{right:-72px}
+.education-section .edu-node.edu-hsc:after{left:-72px;background:linear-gradient(90deg,rgba(0,240,255,.35),rgba(0,240,255,.1))}
+.education-section:after{
+  content:'10TH  →  12TH  →  B.SC.  →  COGNIZANT';display:block;width:max-content;max-width:100%;margin:8px auto 0;padding:8px 13px;border:1px solid rgba(0,240,255,.11);border-radius:999px;color:rgba(151,214,224,.34);background:rgba(7,13,19,.42);backdrop-filter:blur(12px);font:7px 'Fira Code';letter-spacing:.13em;text-align:center;
+}
+
+@media(max-width:760px){
+  /* On phones the same journey becomes one clean vertical route. */
+  .career-education-wrap>.journey-spine{left:13px;right:auto;top:0;bottom:0;width:2px;transform:none;opacity:.42}
+  .career-education-wrap>.journey-spine:before,.career-education-wrap>.journey-spine:after{display:none}
+  .career-education-wrap>.journey-spine i{left:0;width:7px;height:75px;transform:none;animation:fullJourneyMobile 8s linear infinite}
+  @keyframes fullJourneyMobile{from{transform:translateY(calc(100vh - 90px))}to{transform:translateY(-90px)}}
+  .education-section .edu-rail{min-height:0;padding:20px 0 10px 28px}
+  .education-section .edu-track{left:13px;top:0;bottom:0;width:2px;transform:none;opacity:.32}
+  .education-section .edu-node,.education-section .edu-node.edu-degree,.education-section .edu-node.edu-hsc,.education-section .edu-node.edu-foundation{position:relative;left:auto;right:auto;top:auto;bottom:auto;width:100%;margin:0 0 24px;padding:0 0 0 30px;display:block;transform:none}
+  .education-section .edu-node.edu-degree{order:1}.education-section .edu-node.edu-hsc{order:2}.education-section .edu-node.edu-foundation{order:3}
+  .education-section .edu-year,.education-section .edu-node.edu-hsc .edu-year{position:static;margin:0 0 9px;color:#647880}
+  .education-section .edu-dot,.education-section .edu-node.edu-hsc .edu-dot{left:-7px;right:auto;top:2px;width:16px;height:16px}
+  .education-section .edu-dot:after{width:5px;height:5px}
+  .education-section .edu-card{min-height:0;padding:22px;border-radius:19px}
+  .education-section .edu-card h3{font-size:19px;margin-top:12px}
+  .education-section .edu-node.edu-degree:after,.education-section .edu-node.edu-foundation:after,.education-section .edu-node.edu-hsc:after{display:none}
+  .education-section:after{font-size:6px;line-height:1.5;white-space:normal;margin-top:10px}
+}
+
+/* V15 — darker Skill Topology connections while preserving the travelling animation. */
+.topology .links{opacity:.82}
+.topology .links path{
+  stroke:rgba(48,67,75,.78);
+  stroke-width:1.15;
+  stroke-dasharray:5 9;
+  filter:none;
+  animation:dash 14s linear infinite;
+}
+.topology .links path:first-child{
+  stroke:rgba(55,76,84,.82);
+}
+.topology .node.core + .node{}
+@media(max-width:760px){
+  .topology .links{opacity:.68}
+  .topology .links path{stroke:rgba(43,62,70,.72);stroke-width:1}
+}
+
+/* V16 — One continuous journey signal: 10th foundation → education → internships → Cognizant → fade out. */
+.career-education-wrap > .journey-spine {
+  z-index: 6;
+  pointer-events: none;
+  overflow: visible;
+  left:50%;
+  right:auto;
+  top:0;
+  bottom:0;
+  width:2px;
+  transform:translateX(-50%);
+}
+.career-education-wrap > .journey-spine i {
+  display: block;
+  position: absolute;
+  top: auto;
+  bottom: -2px;
+  left: 50%;
+  width: 7px;
+  height: 92px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,.98) 42%, var(--cyan) 68%, transparent 100%);
+  box-shadow: 0 0 12px rgba(255,255,255,.7), 0 0 28px rgba(0,240,255,.95), 0 0 62px rgba(0,240,255,.28);
+  filter: blur(.15px);
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+  animation: journeySignalFull 11s cubic-bezier(.45,0,.25,1) infinite;
+}
+.career-education-wrap > .journey-spine i::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: -28px;
+  width: 1px;
+  height: 120px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, transparent, rgba(0,240,255,.28), transparent);
+  box-shadow: 0 0 12px rgba(0,240,255,.35);
+}
+.career-education-wrap > .journey-spine i::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  width: 22px;
+  height: 22px;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,.95) 0 8%, rgba(0,240,255,.5) 20%, transparent 68%);
+  box-shadow: 0 0 24px rgba(0,240,255,.75);
+}
+@keyframes journeySignalFull {
+  0% { transform: translate(-50%, 22px); opacity: 0; }
+  5% { opacity: .98; }
+  12% { opacity: 1; }
+  86% { opacity: 1; }
+  93% { opacity: .82; }
+  97% { opacity: .38; }
+  100% { transform: translate(-50%, calc(-100% - 115px)); opacity: 0; }
+}
+/* The education rail keeps its structural line, but the travelling light belongs to the single full journey above. */
+.education-section .edu-track::after { display: none !important; }
+@media (max-width: 760px) {
+  .career-education-wrap > .journey-spine {
+    z-index: 6;
+    right: auto;
+    left: 13px;
+    width: 2px;
+    opacity: .42;
+    transform:none;
+  }
+  .career-education-wrap > .journey-spine i {
+    left: 0;
+    width: 6px;
+    height: 72px;
+    transform:none;
+    animation:journeySignalMobileFull 9.5s cubic-bezier(.45,0,.25,1) infinite;
+  }
+  @keyframes journeySignalMobileFull {
+    0%{transform:translateY(calc(100% - 10px));opacity:0}
+    6%{opacity:1}
+    88%{opacity:1}
+    96%{opacity:.35}
+    100%{transform:translateY(-72px);opacity:0}
+  }
+  .career-education-wrap > .journey-spine i::before { height: 92px; left:3px; transform:none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .career-education-wrap > .journey-spine i { animation: none; opacity: 1; transform: translateY(0); }
+}
+
+/* V18 — one continuous journey signal: 10th at the bottom → Cognizant at the top. */
+.career-education-wrap>.journey-spine{
+  left:50%;right:auto;top:0;bottom:0;width:2px;transform:translateX(-50%);
+  opacity:.72;
+  background:linear-gradient(180deg,rgba(0,240,255,.12),rgba(0,240,255,.62) 16%,rgba(118,87,255,.34) 58%,rgba(0,240,255,.16));
+  box-shadow:0 0 18px rgba(0,240,255,.08);
+  z-index:1;
+}
+.career-education-wrap>.journey-spine i{
+  position:absolute;top:100%;bottom:auto;left:50%;width:9px;height:110px;
+  transform:translate(-50%,-100%);
+  border-radius:999px;
+  background:linear-gradient(180deg,transparent,rgba(255,255,255,.98),var(--cyan),transparent);
+  box-shadow:0 0 18px rgba(0,240,255,.8),0 0 42px rgba(0,240,255,.22);
+  animation:journeyBottomToTop 10s linear infinite;
+}
+@keyframes journeyBottomToTop{
+  0%{top:100%;transform:translate(-50%,-100%);opacity:0}
+  4%{opacity:1}
+  88%{opacity:1}
+  96%{opacity:.55}
+  100%{top:0;transform:translate(-50%,0);opacity:0}
+}
+/* The education rail stays visible, but its own second travelling light is removed. */
+.education-section .edu-track:after{display:none!important}
+.education-section .edu-track{opacity:.42;box-shadow:none}
+.journey-bridge span{animation:none!important;opacity:.22;box-shadow:0 0 8px rgba(0,240,255,.18)}
+/* Work Experience keeps the same station-dot language as Education. */
+.career-path .path-line:before,.career-path .path-line:after{opacity:.9}
+.career-path .path-line{opacity:.72}
+@media(max-width:760px){
+  .career-education-wrap>.journey-spine{left:13px;right:auto;top:0;bottom:0;width:2px;transform:none;opacity:.55}
+  .career-education-wrap>.journey-spine i{left:0;width:8px;height:72px;transform:translateY(-100%);animation:journeyBottomToTopMobile 9s linear infinite}
+  .education-section .edu-track{left:13px;opacity:.25}
+  .mobile-nav{position:fixed!important;left:7px!important;right:7px!important;bottom:max(5px,env(safe-area-inset-bottom))!important;z-index:99999!important;width:auto!important;margin:0!important;border-radius:22px!important;background:linear-gradient(135deg,rgba(24,37,49,.78),rgba(5,11,17,.68))!important;border:1px solid rgba(202,239,247,.24)!important;backdrop-filter:blur(28px) saturate(180%)!important;-webkit-backdrop-filter:blur(28px) saturate(180%)!important;box-shadow:0 18px 65px rgba(0,0,0,.58),inset 0 1px rgba(255,255,255,.14),inset 0 -1px rgba(0,240,255,.06)!important}
+  .mobile-nav:after{content:'';position:absolute;left:10%;right:10%;top:1px;height:1px;border-radius:999px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.32),rgba(0,240,255,.42),transparent);opacity:.7;pointer-events:none}
+}
+@keyframes journeyBottomToTopMobile{
+  0%{top:100%;transform:translateY(-100%);opacity:0}
+  5%{opacity:1}
+  88%{opacity:1}
+  96%{opacity:.5}
+  100%{top:0;transform:translateY(0);opacity:0}
+}
+
+
+/* V20 — Work Experience uses the same station-dot language as Education. */
+.career-card .work-dot{
+  position:absolute;top:24px;right:-87px;margin:0;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(5,12,17,.92);border:1px solid rgba(0,240,255,.34);box-shadow:0 0 24px rgba(0,240,255,.08);z-index:6;
+  transition:transform .35s var(--ease),border-color .35s,box-shadow .35s;
+}
+.career-card .work-dot:after{content:'';width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 14px var(--cyan)}
+.career-card.reverse .work-dot{left:-87px;right:auto}
+.career-card:hover .work-dot{transform:scale(1.14);border-color:rgba(0,240,255,.72);box-shadow:0 0 30px rgba(0,240,255,.35)}
+/* Keep the older decorative orb hidden so each work stop has one clear route dot. */
+.career-card .path-orb{display:none}
+@media(max-width:760px){
+  .career-card .work-dot,.career-card.reverse .work-dot{left:-7px;right:auto;top:2px;width:16px;height:16px;margin:0;box-shadow:0 0 18px rgba(0,240,255,.16)}
+  .career-card .work-dot:after{width:5px;height:5px;box-shadow:0 0 10px var(--cyan)}
+}
+
+/* V19 — route stations: visible dots sit on both journey rails and react softly to pointer crossing. */
+.route-particle-layer{position:absolute;inset:0;pointer-events:none;z-index:3;overflow:visible}
+.route-particle{position:absolute;left:50%;top:var(--route-y);width:5px;height:5px;margin:-2.5px 0 0 -2.5px;border-radius:50%;background:rgba(0,240,255,.72);box-shadow:0 0 9px rgba(0,240,255,.42);will-change:transform;transition:box-shadow .25s ease,opacity .25s ease}
+.route-particle:nth-child(3n){width:4px;height:4px;margin:-2px 0 0 -2px;opacity:.62}
+.route-particle:nth-child(4n){width:3px;height:3px;margin:-1.5px 0 0 -1.5px;opacity:.46}
+.route-particle:after{content:'';position:absolute;top:50%;left:50%;width:22px;height:1px;transform:translateY(-50%);background:linear-gradient(90deg,rgba(0,240,255,.16),transparent);opacity:.6}
+.route-particle:nth-child(even):after{left:auto;right:50%;background:linear-gradient(90deg,transparent,rgba(0,240,255,.16))}
+.route-particle.route-active{box-shadow:0 0 15px rgba(0,240,255,.8),0 0 30px rgba(0,240,255,.18);opacity:1}
+.career-card:after{content:'';position:absolute;top:43px;right:-55px;width:55px;height:1px;background:linear-gradient(90deg,rgba(0,240,255,.08),rgba(0,240,255,.38));box-shadow:0 0 8px rgba(0,240,255,.08);pointer-events:none}
+.career-card.reverse:after{right:auto;left:-55px;background:linear-gradient(90deg,rgba(0,240,255,.38),rgba(0,240,255,.08))}
+.career-path,.education-section .edu-rail{overflow:visible}
+@media(max-width:760px){
+  .route-particle-layer{left:0;right:auto;width:2px}
+  .route-particle{left:0;width:4px;height:4px;margin:-2px 0 0 -1px}
+  .route-particle:after{display:none}
+  .career-card:after,.career-card.reverse:after{display:none}
+}
+
+
+/* V21 — visible route stations + dynamic personal tech mark */
+.brand .logo-mark{position:relative;width:38px;height:38px;display:grid;place-items:center;border:1px solid rgba(0,240,255,.42);border-radius:9px;background:linear-gradient(145deg,rgba(0,240,255,.07),rgba(255,255,255,.015));box-shadow:inset 0 0 18px rgba(0,240,255,.08),0 0 18px rgba(0,240,255,.04);overflow:visible}
+.brand .logo-core{position:relative;z-index:3;font:700 12px 'Fira Code';font-style:normal;color:var(--cyan);text-shadow:0 0 12px rgba(0,240,255,.45);animation:logoCore 3.6s ease-in-out infinite}
+.brand .logo-ring{position:absolute;inset:6px;border:1px solid rgba(0,240,255,.34);border-left-color:transparent;border-radius:50%;animation:logoSpin 4.5s linear infinite}
+.brand .logo-node{position:absolute;width:4px;height:4px;border-radius:50%;background:var(--cyan);box-shadow:0 0 9px rgba(0,240,255,.8);animation:logoPulse 2.2s ease-in-out infinite}
+.brand .logo-node-a{top:3px;left:16px}.brand .logo-node-b{right:3px;top:16px;animation-delay:-.7s}.brand .logo-node-c{bottom:3px;left:16px;animation-delay:-1.4s}
+@keyframes logoSpin{to{transform:rotate(360deg)}}@keyframes logoCore{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.12);opacity:1}}@keyframes logoPulse{0%,100%{transform:scale(.65);opacity:.45}50%{transform:scale(1.5);opacity:1}}
+
+/* Work route stations use the exact same visual language as .edu-dot. */
+.career-card .work-dot{position:absolute;width:10px;height:10px;margin:0;border-radius:50%;background:var(--bg);border:1px solid var(--cyan);box-shadow:0 0 18px rgba(0,240,255,.45);z-index:12;top:34px;right:-61px}
+.career-card.reverse .work-dot{left:-61px;right:auto}
+.career-card .work-dot:before{content:'';position:absolute;inset:-6px;border:1px solid rgba(0,240,255,.16);border-radius:50%;animation:stationPulse 2.8s ease-out infinite}
+.career-card:hover .work-dot{background:#07151b;box-shadow:0 0 24px rgba(0,240,255,.72);transform:scale(1.2)}
+.path-orb{display:none}
+@keyframes stationPulse{0%{transform:scale(.65);opacity:.8}75%,100%{transform:scale(1.65);opacity:0}}
+@media(max-width:760px){.career-card .work-dot,.career-card.reverse .work-dot{left:-7px;right:auto;top:32px;width:9px;height:9px}.career-card{overflow:visible}.brand .logo-mark{width:34px;height:34px}.brand .logo-ring{inset:5px}.brand .logo-node-a{top:2px;left:14px}.brand .logo-node-b{right:2px;top:14px}.brand .logo-node-c{bottom:2px;left:14px}}
+@media(prefers-reduced-motion:reduce){.brand .logo-ring,.brand .logo-core,.brand .logo-node,.career-card .work-dot:before{animation:none}}
+
+/* V22 — Work Experience station dots must sit outside the glass cards on the central route.
+   The card's earlier overflow:hidden was clipping the .work-dot before it could be rendered. */
+.career-path .career-card{overflow:visible}
+.career-path .career-card .work-dot{display:grid;visibility:visible;opacity:1;pointer-events:none}
+.career-path .career-card .work-dot:after{display:block;visibility:visible;opacity:1}
+.career-path .career-card:after{z-index:5}
+@media(max-width:760px){
+  .career-path .career-card{overflow:visible}
+  .career-path .career-card .work-dot{display:grid;visibility:visible;opacity:1}
+}
+
+/* V23 — Work Experience now mirrors Education Stack's complete visual system.
+   Same glass surface, typography, glow, hover depth, touch lens, station dot and animation language. */
+.career-path .career-card{
+  min-height:245px;
+  padding:30px;
+  border-radius:22px;
+  overflow:visible;
+  background:linear-gradient(145deg,rgba(15,24,33,.76),rgba(6,11,17,.55));
+  border:1px solid rgba(174,231,241,.17);
+  box-shadow:0 22px 70px rgba(0,0,0,.24),inset 0 1px rgba(255,255,255,.045);
+  backdrop-filter:blur(20px) saturate(135%);
+  -webkit-backdrop-filter:blur(20px) saturate(135%);
+  transition:transform .65s var(--ease),border-color .4s,box-shadow .5s,background .4s;
+}
+.career-path .career-card:before{
+  content:'';
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  background:radial-gradient(260px circle at var(--touch-x,50%) var(--touch-y,50%),rgba(0,240,255,.075),transparent 65%),linear-gradient(115deg,rgba(0,240,255,.035),transparent 45%,rgba(118,87,255,.025));
+  opacity:.75;
+  pointer-events:none;
+}
+.career-path .career-card:hover{
+  transform:translateY(-7px);
+  border-color:rgba(0,240,255,.38);
+  box-shadow:0 30px 90px rgba(0,0,0,.36),0 0 34px rgba(0,240,255,.06),inset 0 1px rgba(255,255,255,.08);
+}
+.career-path .career-card .path-index{
+  position:relative;
+  z-index:3;
+  width:36px;
+  height:36px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(0,240,255,.25);
+  color:var(--cyan);
+  background:rgba(7,14,20,.42);
+  font:9px 'Fira Code';
+  transition:transform .35s var(--ease),background .35s,border-color .35s,box-shadow .35s;
+}
+.career-path .career-card:hover .path-index{
+  transform:scale(1.08);
+  background:rgba(0,240,255,.06);
+  border-color:rgba(0,240,255,.42);
+  box-shadow:0 0 18px rgba(0,240,255,.08);
+}
+.career-path .career-card time{
+  position:absolute;
+  top:22px;
+  right:20px;
+  color:#596c74;
+  font:8px 'Fira Code';
+  letter-spacing:.05em;
+  z-index:3;
+}
+.career-path .career-main h3{
+  position:relative;
+  font-size:24px;
+  line-height:1.08;
+  margin:12px 0 13px;
+  letter-spacing:-.025em;
+  transition:color .22s ease,font-family .22s ease,letter-spacing .22s ease;
+}
+.career-path .career-card:hover .career-main h3{
+  font-family:'Fira Code',monospace;
+  letter-spacing:.02em;
+  color:var(--cyan);
+}
+.career-path .career-main p:not(.tag){
+  position:relative;
+  color:#a5b7be;
+  font-size:11px;
+  line-height:1.55;
+  margin-bottom:0;
+}
+.career-path .career-main .tag{
+  position:relative;
+  font:8px 'Fira Code';
+  letter-spacing:.14em;
+  color:var(--cyan);
+}
+.career-path .mini-tags{
+  position:relative;
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:18px;
+}
+.career-path .mini-tags span{
+  font:7px 'Fira Code';
+  padding:6px 8px;
+  border:1px solid rgba(0,240,255,.12);
+  color:#687b83;
+  background:rgba(255,255,255,.015);
+  transition:color .3s,border-color .3s,background .3s,transform .3s var(--ease);
+}
+.career-path .career-card:hover .mini-tags span{
+  border-color:rgba(0,240,255,.18);
+}
+.career-path .career-card:hover .mini-tags span:hover{
+  color:#bfeef4;
+  border-color:rgba(0,240,255,.38);
+  background:rgba(0,240,255,.035);
+  transform:translateY(-2px);
+}
+/* Exact Education-style station dot on the Work route. */
+.career-path .career-card .work-dot{
+  position:absolute;
+  top:28px;
+  right:-71px;
+  width:32px;
+  height:32px;
+  margin:0;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:rgba(5,12,17,.92);
+  border:1px solid rgba(0,240,255,.34);
+  box-shadow:0 0 24px rgba(0,240,255,.08);
+  z-index:12;
+  transition:transform .45s var(--ease),border-color .4s,box-shadow .5s,background .4s;
+}
+.career-path .career-card .work-dot:after{
+  content:'';
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--cyan);
+  box-shadow:0 0 14px var(--cyan);
+}
+.career-path .career-card .work-dot:before{
+  content:'';
+  position:absolute;
+  inset:-1px;
+  border:1px solid rgba(0,240,255,.12);
+  border-radius:50%;
+  animation:eduStationPulse 2.8s ease-out infinite;
+}
+@keyframes eduStationPulse{
+  0%{transform:scale(.8);opacity:.85}
+  70%,100%{transform:scale(1.65);opacity:0}
+}
+.career-path .career-card.reverse .work-dot{left:-71px;right:auto}
+.career-path .career-card:hover .work-dot{
+  transform:scale(1.14);
+  border-color:rgba(0,240,255,.72);
+  background:#071016;
+  box-shadow:0 0 30px rgba(0,240,255,.35);
+}
+.career-path .career-card:after{
+  content:'';
+  position:absolute;
+  top:44px;
+  right:-55px;
+  width:55px;
+  height:1px;
+  background:linear-gradient(90deg,rgba(0,240,255,.1),rgba(0,240,255,.35));
+  box-shadow:none;
+  z-index:5;
+  pointer-events:none;
+}
+.career-path .career-card.reverse:after{
+  left:-55px;
+  right:auto;
+  background:linear-gradient(90deg,rgba(0,240,255,.35),rgba(0,240,255,.1));
+}
+@media(max-width:760px){
+  .career-path .career-card{
+    min-height:0;
+    padding:22px 22px 22px 30px;
+    border-radius:19px;
+  }
+  .career-path .career-card .work-dot,
+  .career-path .career-card.reverse .work-dot{
+    left:-7px;
+    right:auto;
+    top:2px;
+    width:16px;
+    height:16px;
+  }
+  .career-path .career-card .work-dot:after{width:5px;height:5px}
+  .career-path .career-card .work-dot:before{inset:-1px}
+  .career-path .career-card time{position:static;display:block;margin:0 0 9px;color:#647880}
+  .career-path .career-main h3{font-size:19px;margin-top:12px}
+  .career-path .career-main p:not(.tag){font-size:11px;line-height:1.6}
+  .career-path .career-card:after{display:none}
+  .career-path .career-card:hover{transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .career-path .career-card .work-dot:before{animation:none}
+}
+
+/* V24 — exact Work Experience station alignment. The station center sits on the 50% route rail, matching Education. */
+@media(min-width:761px){
+  .career-path .career-card .work-dot{top:28px;right:-71px;width:32px;height:32px;}
+  .career-path .career-card.reverse .work-dot{left:-71px;right:auto;}
+  .career-path .career-card:after{top:44px;right:-55px;width:55px;}
+  .career-path .career-card.reverse:after{left:-55px;right:auto;}
+}
+
+
+/* V25 — impact pop when the single journey light reaches a station. */
+.edu-dot.signal-hit,
+.work-dot.signal-hit{
+  transform:scale(1.48);
+  border-color:rgba(255,255,255,.88)!important;
+  background:rgba(9,20,27,.98)!important;
+  box-shadow:
+    0 0 0 6px rgba(0,240,255,.08),
+    0 0 28px rgba(0,240,255,.8),
+    0 0 58px rgba(0,240,255,.34)!important;
+  transition:transform .18s var(--ease),box-shadow .18s var(--ease),border-color .18s var(--ease),background .18s;
+}
+.edu-dot.signal-hit:after,
+.work-dot.signal-hit:after{
+  transform:scale(1.45);
+  background:#fff!important;
+  box-shadow:0 0 10px #fff,0 0 22px var(--cyan),0 0 38px var(--cyan)!important;
+}
+.edu-card.signal-card-hit,
+.career-card.signal-card-hit{
+  transform:translateY(-5px) scale(1.008);
+  border-color:rgba(0,240,255,.42)!important;
+  box-shadow:0 28px 85px rgba(0,0,0,.32),0 0 34px rgba(0,240,255,.11),inset 0 1px rgba(255,255,255,.09)!important;
+}
+@media(max-width:760px){
+  .edu-dot.signal-hit,.work-dot.signal-hit{transform:scale(1.38)}
+  .edu-card.signal-card-hit,.career-card.signal-card-hit{transform:translateY(-3px) scale(1.004)}
+}
+@media(prefers-reduced-motion:reduce){
+  .edu-dot.signal-hit,.work-dot.signal-hit{transform:scale(1.18)}
+}
+
+/* V26 — PHONE ONLY: compact liquid bottom navigation + horizontal card rails. */
+@media (max-width:760px){
+  /* Selected Projects: one card per swipe, no vertical stacking. */
+  .project-grid{
+    display:flex !important;
+    flex-direction:row !important;
+    gap:14px !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    width:100vw !important;
+    margin-left:calc((92vw - 100vw)/2) !important;
+    padding:4px 4vw 18px !important;
+    scroll-snap-type:x mandatory;
+    overscroll-behavior-x:contain;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .project-grid::-webkit-scrollbar{display:none}
+  .project-card{
+    flex:0 0 84vw !important;
+    width:84vw !important;
+    min-height:310px !important;
+    scroll-snap-align:center;
+    scroll-snap-stop:always;
+  }
+
+  /* System Capabilities: each capability is a swipeable card. */
+  .service-grid{
+    display:flex !important;
+    flex-direction:row !important;
+    gap:14px !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    width:100vw !important;
+    margin-left:calc((92vw - 100vw)/2) !important;
+    padding:4px 4vw 18px !important;
+    scroll-snap-type:x mandatory;
+    overscroll-behavior-x:contain;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    background:transparent !important;
+    border:0 !important;
+    box-shadow:none !important;
+    backdrop-filter:none !important;
+    -webkit-backdrop-filter:none !important;
+  }
+  .service-grid::-webkit-scrollbar{display:none}
+  .service-grid .service{
+    flex:0 0 84vw !important;
+    width:84vw !important;
+    min-height:220px !important;
+    margin:0 !important;
+    padding:28px 24px !important;
+    border:1px solid rgba(153,219,231,.13) !important;
+    border-radius:20px !important;
+    background:linear-gradient(145deg,rgba(15,24,33,.76),rgba(6,11,17,.58)) !important;
+    box-shadow:0 18px 55px rgba(0,0,0,.26),inset 0 1px rgba(255,255,255,.035) !important;
+    backdrop-filter:blur(10px) !important;
+    -webkit-backdrop-filter:blur(10px) !important;
+    scroll-snap-align:center;
+    scroll-snap-stop:always;
+  }
+
+  /* Compact, always-visible liquid navigation. Kept lightweight to avoid scroll lag. */
+  .mobile-nav{
+    position:fixed !important;
+    display:grid !important;
+    grid-template-columns:repeat(5,minmax(0,1fr)) !important;
+    left:8px !important;
+    right:8px !important;
+    bottom:max(6px,env(safe-area-inset-bottom)) !important;
+    width:auto !important;
+    height:58px !important;
+    padding:5px !important;
+    margin:0 !important;
+    z-index:99999 !important;
+    overflow:hidden !important;
+    border-radius:18px !important;
+    border:1px solid rgba(190,235,245,.22) !important;
+    background:
+      radial-gradient(circle at 18% 0%,rgba(0,240,255,.16),transparent 34%),
+      radial-gradient(circle at 82% 100%,rgba(118,87,255,.14),transparent 38%),
+      linear-gradient(135deg,rgba(18,31,42,.84),rgba(5,11,17,.78)) !important;
+    box-shadow:
+      0 12px 38px rgba(0,0,0,.46),
+      inset 0 1px rgba(255,255,255,.14),
+      inset 0 -1px rgba(0,240,255,.06) !important;
+    backdrop-filter:blur(12px) saturate(145%) !important;
+    -webkit-backdrop-filter:blur(12px) saturate(145%) !important;
+    transform:translate3d(0,0,0) !important;
+    will-change:transform;
+    contain:layout paint;
+  }
+  .mobile-nav:before{
+    content:'' !important;
+    position:absolute !important;
+    inset:-35% 12% auto !important;
+    height:70% !important;
+    border-radius:50% !important;
+    background:radial-gradient(ellipse,rgba(0,240,255,.13),transparent 68%) !important;
+    filter:blur(12px) !important;
+    opacity:.8 !important;
+    pointer-events:none !important;
+    animation:mobileLiquid 7s ease-in-out infinite alternate !important;
+  }
+  .mobile-nav:after{
+    content:'' !important;
+    position:absolute !important;
+    left:8% !important;
+    right:8% !important;
+    top:1px !important;
+    height:1px !important;
+    border-radius:999px !important;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.42),rgba(0,240,255,.5),transparent) !important;
+    pointer-events:none !important;
+  }
+  .mobile-nav a{
+    min-height:46px !important;
+    height:46px !important;
+    gap:2px !important;
+    border-radius:13px !important;
+    color:#71858d !important;
+    -webkit-tap-highlight-color:transparent !important;
+    touch-action:manipulation !important;
+    transition:color .2s ease,background .2s ease,transform .2s ease !important;
+  }
+  .mobile-nav a.active{
+    color:#effcff !important;
+    transform:translateY(-1px) !important;
+    background:linear-gradient(180deg,rgba(0,240,255,.13),rgba(0,240,255,.025)) !important;
+    border:1px solid rgba(0,240,255,.13) !important;
+    box-shadow:inset 0 0 16px rgba(0,240,255,.05) !important;
+  }
+  .mobile-nav i{font-size:15px !important;line-height:1 !important}
+  .mobile-nav span{font-size:6px !important;letter-spacing:.06em !important}
+}
+
+@keyframes mobileLiquid{
+  0%{transform:translateX(-18%) scaleX(.9)}
+  100%{transform:translateX(18%) scaleX(1.15)}
+}
+
+/* V27 — PHONE ONLY: true viewport fit + permanently visible compact liquid navigation. */
+@media (max-width:760px){
+  html,body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden !important;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  img,canvas,svg,video{max-width:100%;}
+  main,.section,.career-education-wrap{max-width:100%;overflow-x:clip;}
+
+  /* Keep the swipe rails inside the phone viewport instead of creating page-level overflow. */
+  .project-grid,
+  .service-grid{
+    width:100% !important;
+    max-width:100% !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+    padding-left:12px !important;
+    padding-right:12px !important;
+    gap:10px !important;
+  }
+  .project-card{flex-basis:82vw !important;width:82vw !important;}
+  .service-grid .service{flex-basis:82vw !important;width:82vw !important;padding:22px 20px !important;}
+
+  /* Never hide/collapse the mobile navigation after a tap or scroll. */
+  .mobile-nav{
+    display:grid !important;
+    visibility:visible !important;
+    opacity:1 !important;
+    position:fixed !important;
+    left:6px !important;
+    right:6px !important;
+    bottom:max(5px,env(safe-area-inset-bottom)) !important;
+    width:auto !important;
+    max-width:none !important;
+    height:50px !important;
+    min-height:50px !important;
+    padding:3px !important;
+    margin:0 !important;
+    z-index:2147483000 !important;
+    grid-template-columns:repeat(5,1fr) !important;
+    border-radius:16px !important;
+    overflow:hidden !important;
+    transform:translateZ(0) !important;
+    pointer-events:auto !important;
+    background:
+      linear-gradient(125deg,rgba(34,61,75,.72),rgba(8,18,27,.76) 48%,rgba(30,28,58,.72)) !important;
+    border:1px solid rgba(177,235,244,.25) !important;
+    box-shadow:0 8px 28px rgba(0,0,0,.48),inset 0 1px rgba(255,255,255,.17),inset 0 -1px rgba(0,240,255,.08) !important;
+    backdrop-filter:blur(16px) saturate(155%) !important;
+    -webkit-backdrop-filter:blur(16px) saturate(155%) !important;
+    contain:layout paint !important;
+  }
+  .mobile-nav:before{
+    inset:-70% -20% auto !important;
+    height:150% !important;
+    opacity:.55 !important;
+    filter:blur(10px) !important;
+    animation:mobileLiquid 8s ease-in-out infinite alternate !important;
+  }
+  .mobile-nav a{
+    min-width:0 !important;
+    min-height:42px !important;
+    height:42px !important;
+    padding:2px 1px !important;
+    gap:1px !important;
+    border-radius:11px !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    justify-content:center !important;
+    overflow:hidden !important;
+  }
+  .mobile-nav i{font-size:14px !important;line-height:14px !important;font-style:normal !important;}
+  .mobile-nav span{font-size:5.5px !important;line-height:8px !important;letter-spacing:.04em !important;white-space:nowrap !important;}
+  .mobile-nav a.active{transform:none !important;}
+}
